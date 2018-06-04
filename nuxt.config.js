@@ -27,6 +27,9 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
+  plugins: [
+    { src: '~/plugins/http-interceptor', ssr: true }
+  ],
   /*
   ** Build configuration
   */
@@ -44,5 +47,17 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
+  ],
+  proxy: [
+    ['/v2', { 
+      target: 'http://demowap.imxkj.com/'
+    }],
+    ['/files', { 
+      target: 'http://api.demo.com'
+    }]
+  ]
 }

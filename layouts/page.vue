@@ -4,19 +4,18 @@
 
     <nuxt class="container"/>
 
-    <!-- <download-label class="download"></download-label> -->
+    <download-label class="download"></download-label>
   </div>
 </template>
 
 <script>
 import HeaderLabel from '~/components/header-label'
-// import DownloadLabel from '~/components/download-label'
-// import DownloadLabel from '~/components/download-label'
+import DownloadLabel from '~/components/download-label'
 
 export default {
   components: {
-    HeaderLabel
-    // DownloadLabel
+    HeaderLabel,
+    DownloadLabel
   }
 }
 </script>
