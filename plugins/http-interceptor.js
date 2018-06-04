@@ -5,6 +5,9 @@ axios.defaults.timeout = 5000
 
 // request 拦截器
 axios.interceptors.request.use(config => {
+  config.headers.logat = 4
+  config.headers.version = '2.3.0'
+
   return config
 }, error => {
   return Promise.reject(error)

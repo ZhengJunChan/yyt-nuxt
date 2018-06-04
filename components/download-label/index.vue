@@ -12,7 +12,7 @@
 </template>
 
 <script type="text/javascript">
-// import { RouterUtil } from '~/utils'
+import { RouterUtil } from '~/utils'
 
 export default {
   props: {
@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     download () {
-      // RouterUtil.download(this.$router, this.$route)
+      RouterUtil.download(this.$router, this.$route)
     }
   }
 }
