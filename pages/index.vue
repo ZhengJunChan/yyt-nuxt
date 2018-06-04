@@ -1,85 +1,64 @@
 <template>
-  <section class="home_page">
-    <!-- <swiper :list="banner" v-if="banner.length"></swiper> -->
-    <!-- index.vue
-    <img src="~assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
-    <h1 class="title">
-      USERS
-    </h1>
-    <ul class="users">
-      <li v-for="(user, index) in users" :key="index" class="user">
-        <nuxt-link :to="{ name: 'id', params: { id: index }}">
-          {{ user.name }}
-        </nuxt-link>
-      </li>
-    </ul> -->
+  <section class="container">
+    <div>
+      <app-logo/>
+      <h1 class="title">
+        yyt-nuxt
+      </h1>
+      <h2 class="subtitle">
+        Nuxt.js project
+      </h2>
+      <div class="links">
+        <a
+          href="https://nuxtjs.org/"
+          target="_blank"
+          class="button--green">Documentation</a>
+        <a
+          href="https://github.com/nuxt/nuxt.js"
+          target="_blank"
+          class="button--grey">GitHub</a>
+      </div>
+    </div>
   </section>
 </template>
 
 <script>
-import HomeApi from './home-api.js'
-// import Swiper from '~/components/swiper'
+import AppLogo from '~/components/AppLogo.vue'
 
 export default {
-  layout: 'page',
   components: {
-    // Swiper
-    // Cell,
-    // SongSheetList,
-    // MusicianList,
-    // MusicList,
-    // TopicList,
-    // TopTypeList
-  },
-  data () {
-    return {
-      banner: [],
-      billboard: {
-        cate_img: {},
-        song: []
-      },
-      songSheet: {
-        cate_img: {},
-        song: []
-      },
-      musicians: {
-        cate_img: {},
-        musician: []
-      },
-      musicsList: [],
-      topics: {
-        cate_img: {},
-        musician: []
-      }
-    }
-  },
-  created () {
-    this.init()
-  },
-  methods: {
-    init () {
-      HomeApi.getHomeData().then((res) => {
-        if (res.code !== 200) {
-          // this.$toast.error(res.msg)
-          return
-        }
-
-        this.banner = res.data.shuffling || [] // 轮播列表
-        this.billboard = res.data.billboard || [] // 轮播列表
-        this.songSheet = res.data.song || [] // 推荐歌单
-        this.musicians = res.data.musician || [] // 推荐音乐人
-        this.musicsList = res.data.catemusic || [] // 分类音乐
-        this.topics = res.data.topic || [] // 热门话题
-      }, (error) => {
-        console.log(error.msg || '获取数据失败')
-        // this.$toast.error(error.msg || '获取数据失败')
-        // this.$toast.error(error.msg || '获取数据失败')
-      })
-    }
+    AppLogo
   }
 }
 </script>
 
-<style lang="less" scoped>
-// @import './home.less'
+<style>
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+  display: block;
+  font-weight: 300;
+  font-size: 100px;
+  color: #35495e;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-weight: 300;
+  font-size: 42px;
+  color: #526488;
+  word-spacing: 5px;
+  padding-bottom: 15px;
+}
+
+.links {
+  padding-top: 15px;
+}
 </style>

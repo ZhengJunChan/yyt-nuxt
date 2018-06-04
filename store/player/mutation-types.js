@@ -1,2 +1,0 @@
-export const UPDATA_SONG = 'UPDATA_SONG'
-export const UPDATA_SONG_SHEET = 'UPDATA_SONG_SHEET'

@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "yyt-nuxt",
   "version": "1.0.0",
   "description": "fallow from Chan",
   "author": "ZhengJunChan <zhengjunchan@qq.com>",
@@ -30,7 +30,7 @@
     "@nuxtjs/axios": "^5.3.1",
     "@nuxtjs/proxy": "^1.2.4",
     "babel-eslint": "^7.2.3",
-    "eslint": "^4.3.0",
+    "eslint": "^4.19.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-html": "^3.1.1",
@@ -38,6 +38,7 @@
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-vue": "^4.5.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3"
   },
