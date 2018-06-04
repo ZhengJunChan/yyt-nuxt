@@ -1,11 +1,9 @@
 <!-- [header_label_component]   @Author: 郑君婵   @DateTime: 2017-10-20 -->
 <template>
   <div class="header_label_component">
-  	<div class="back" @click="$router.go(-1)">
-  		<!-- <img src="./../../assets/img/common/icon_back_white.png"> -->
-  	</div>
+  	<div class="back" @click="$router.go(-1)"></div>
 
-  	<!-- <h1 class="text_nowrap_ellipsis" v-text="$store.state.app.title"></h1> -->
+  	<h1 class="text_nowrap_ellipsis" v-text="$store.state.app.title"></h1>
   </div>
 </template>
 
@@ -14,10 +12,10 @@
 
 export default {
   created () {
-    console.log(this)
+    console.log(this.$store)
   },
   mounted () {
-    console.log(this)
+    console.log(this.$store)
   }
   // async asyncData () {
   //   let { data } = await axios.get('/api/users')

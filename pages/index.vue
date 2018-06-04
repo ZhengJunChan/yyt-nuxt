@@ -13,12 +13,21 @@
         </nuxt-link>
       </li>
     </ul> -->
+    <!-- 分类音乐 -->
+    <div v-for="item in musicsList" v-if="item.music && item.music.length" :key="item.id">
+       <!--  <cell class="title_label" :title="item.title" :icon="$fixImg(item.imgpic_info.link)">
+        </cell> -->
+
+        <music-list :list="item.music" type="x-scroller" :max-num="10"></music-list>
+    </div>
+    <!-- /  分类音乐 -->
   </section>
 </template>
 
 <script>
 import HomeApi from './home-api.js'
-// import Swiper from '~/components/swiper'
+
+import MusicList from '~/components/music-box/music-list'
 
 export default {
   layout: 'page',
@@ -27,7 +36,7 @@ export default {
     // Cell,
     // SongSheetList,
     // MusicianList,
-    // MusicList,
+    MusicList
     // TopicList,
     // TopTypeList
   },
@@ -71,6 +80,7 @@ export default {
         this.musicsList = res.data.catemusic || [] // 分类音乐
         this.topics = res.data.topic || [] // 热门话题
       }, (error) => {
+        console.log(error)
         console.log(error.msg || '获取数据失败')
         // this.$toast.error(error.msg || '获取数据失败')
         // this.$toast.error(error.msg || '获取数据失败')
@@ -81,5 +91,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-// @import './home.less'
+@import './home.less';
 </style>

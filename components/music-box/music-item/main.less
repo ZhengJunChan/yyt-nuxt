@@ -1,0 +1,58 @@
+@import './../../../less/config.less';
+
+.music_item_component {
+  width: 230/100rem;
+  // height: 350/100rem;
+
+  .cover_img {
+    position: relative;
+    width: 230/100rem;
+    height: 230/100rem;
+    color: @white-color;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .count {
+    position: absolute;
+    left: @padding-10;
+    bottom: @padding-10;
+    padding-left: 30/100rem;
+    font-size: @smallst-font;
+    background: url(./../../../imgs/common/icon_index_headphone.png) left center no-repeat;
+    background-size: 20/100rem auto;
+  }
+
+  .play_btn {
+    position: absolute;
+    right: @padding-10;
+    bottom: @padding-10;
+    width: 40/100rem;
+    height: 40/100rem;
+  }
+
+  .info_box {
+    padding: @padding-10 @padding-10 0 @padding-10;
+  }
+
+  .music_name {
+    overflow: hidden;
+    height: 74/100rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: @small-font;
+    line-height: 36/100rem;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .singer_name {
+    color: @singer-name;
+    font-size: @smaller-font;
+    margin-top: 10/100rem;
+  }
+}
