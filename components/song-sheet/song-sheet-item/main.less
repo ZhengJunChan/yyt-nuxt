@@ -1,0 +1,114 @@
+@import './../../../less/config.less';
+
+.song_sheet_item_component {
+  width: 230/100rem;
+  text-align: center;
+  display: inline-block;
+  min-height: 250/100rem;
+
+  .play_btn,
+  .like_icon{
+    display: none;
+  }
+
+  .cover_img_box {
+    width: 230/100rem;
+    position: relative;
+    height: 230/100rem;
+    padding: 4/100rem;
+    border-radius: 50%;
+    text-align: center;
+    border: solid 1px @circle-border-color;
+  }
+  .cover_img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: @before-bg-color;
+    }
+  }
+  .ctrl_btn,
+  .sheet_counts {
+    position: absolute;
+    color: @white-color;
+  }
+  .ctrl_btn {
+    left: 50%;
+    top: 50%;
+  }
+
+  .play_btn{
+    width: 60/100rem;
+    height: 60/100rem;
+    margin-top: -30/100rem;
+    margin-left: -30/100rem;
+  }
+
+  .like_icon{
+    width: 50/100rem;
+    height: 45/100rem;
+    margin-top: -25/100rem;
+    margin-left: -22.5/100rem;
+  }
+  .sheet_counts {
+    width: 100%;
+    top: 170/100rem;
+    text-align: center;
+    font-size: @smallst-font;
+    &>span {
+      padding-left: 30/100rem;
+      background: url(./../../../imgs/common/icon_index_playvolume.png) left center no-repeat;
+      background-size: auto 24/100rem;
+    }
+  }
+  .sheet_name {
+    overflow: hidden;
+    padding: 0 0.08rem;
+    line-height: 0.43rem;
+    margin-top: 18/100rem;
+    text-overflow: ellipsis;
+    font-size: @small-font;
+    //display: -webkit-box;
+    //-webkit-box-orient: vertical;
+    //-webkit-line-clamp: 2;
+  }
+
+  &.scroller {
+    .sheet_name {
+      line-height: 0.43rem;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+  }
+
+  &.list,
+  &.like {
+    .sheet_name {
+      white-space: nowrap;
+    }
+  }
+
+  &.list,
+  &.scroller {
+    .play_btn {
+      display: inline-block;
+    }
+  }
+
+  &.like {
+    .like_icon {
+      display: inline-block;
+    }
+  }
+}

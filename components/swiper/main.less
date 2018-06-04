@@ -1,0 +1,28 @@
+.swiper_component {
+  .vux-slider {
+    &>.vux-swiper {
+      &>.vux-swiper-item {
+        &>a {
+          &>.vux-swiper-desc {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &>.vux-indicator,
+    .vux-indicator-right {
+    	bottom: 0;
+      &>a>.vux-icon-dot {
+      	width: 6/100rem;
+      	height: 6/100rem;
+      	border-radius: 3/100rem;
+        background-color: rgba(255, 255, 255, 0.4);
+        &.active{
+        	width: 14/100rem;
+        	background-color: #fff;
+        }
+      }
+    }
+  }
+}

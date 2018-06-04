@@ -1,0 +1,110 @@
+@import './../../less/config.less';
+
+.singer_header_component {
+  .content {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: @white-color;
+    padding-top: @padding-30;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .name {
+    display: inline-block;
+    height: 34/100rem;
+    line-height: 34/100rem;
+    position: relative;
+    font-weight: bold;
+    font-size: @normal-title;
+    padding-right: 43/100rem;
+    >i {
+      position: absolute;
+      display: block;
+      right: 0;
+      top: 50%;
+      width: 34/100rem;
+      height: 34/100rem;
+      margin-top: -17/100rem;
+      border-radius: 5/100rem;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 18/100rem;
+    }
+  }
+
+  .gilr {
+    background-color: @pink-color;
+    background-image: url('./../../imgs/common/icon_nv_white.png');
+  }
+
+  .boy {
+    background-color: @boy-font;
+    background-image: url('./../../imgs/common/icon_nan_white.png');
+  }
+
+  .flow {
+    width: 550/100rem;
+    margin: @margin-20 auto @margin-40;
+    .item {
+      position: relative;
+      text-align: center;
+      font-size: @small-font;
+      &+.item {
+        &:before {
+          content: '';
+          display: block;
+          width: 1px;
+          height: 28/100rem;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          margin-top: -12/100rem;
+          // background-color: @white-color;
+          background-color: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+  }
+
+  .tab{
+    position: relative;
+    height: 60/100rem;
+    width: 300/100rem;
+    line-height: 60/100rem;
+    margin: 0 auto 40/100rem;
+    border-radius: 30/100rem;
+    border: solid 1px @white-color;
+
+    &:before{
+      content: '';
+      display: block;
+      width: 1px;
+      background-color: @white-color;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      bottom: 0;
+    }
+
+    .item{
+      display: inline-block;
+      padding-left: 35/100rem;
+      text-align: center;
+      width: 50%;
+      height: 100%;
+      line-height: 54/100rem;
+      background-size: 24/100rem;
+      background-position: 26/100rem center;
+      background-repeat: no-repeat;
+    }
+
+    .fallow{
+      background-image: url(./../../imgs/common/icon_musician_guanzhu.png);
+    }
+
+    .email{
+      background-image: url(./../../imgs/common/icon_musician_sixin.png);
+    }
+  }
+}

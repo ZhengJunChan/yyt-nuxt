@@ -1,0 +1,86 @@
+@import './../../../less/config.less';
+
+.dynamic_item_component {
+  padding: @padding-30 @padding-20;
+  .singer_header {
+    height: 70/100rem;
+    line-height: 70/100rem;
+  }
+  .name {
+    font-size: @normal-font;
+    padding-left: @padding-10;
+  }
+  .girl {
+    color: @girl-font;
+  }
+
+  .boy {
+    color: @boy-font;
+  }
+
+  .content {
+    margin-top: 15/100rem;
+  }
+
+  .img_box {
+    margin-top: 10/100rem;
+    text-decoration: none;
+    list-style-type: none;
+    &>li{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    &.two {
+      &>li {
+        float: left;
+        width: 49.3%;
+        padding-top: 49.3%;
+        margin-left: 1.4%;
+        margin-top: 1.4%;
+        &:nth-child(2n+1){
+          margin-left: 0;
+        }
+      }
+    }
+    &.three {
+      &>li {
+        float: left;
+        width: 32.4%;
+        padding-top: 32.2%;
+        margin-left: 1.4%;
+        margin-top: 1.4%;
+        &:nth-child(3n+1){
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .label {
+    margin-top: @margin-20;
+  }
+
+  .time_line {
+    margin-top: 40/100rem;
+    color: @light-grey-color;
+    font-size: @smallst-font;
+  }
+
+  .discuss,
+  .zan {
+    padding-left: @padding-30;
+    background-position: left center;
+    background-size: 24/100rem 22/100rem;
+    background-repeat: no-repeat;
+  }
+
+  .discuss {
+    margin-left: 40/100rem;
+    background-image: url(./../../../imgs/common/icon_index_pinglun.png);
+  }
+
+  .zan {
+    background-image: url(./../../../imgs/common/icon_index_dianzan.png);
+  }
+}

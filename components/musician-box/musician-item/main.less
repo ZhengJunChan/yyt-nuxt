@@ -1,0 +1,46 @@
+@import './../../../less/config.less';
+
+.musician_item_component {
+  @play_btn_height: 54/100rem;
+  .has-border{
+    border: 1px solid #f5f5f5;
+  }
+  width: 230/100rem;
+  height: 350/100rem;
+  position: relative;
+  text-align: center;
+  padding-top: 30/100rem;
+  border-radius: 5/100rem;
+  border: solid 1px #ebebeb;
+  .musician_name {
+    font-size: @small-font;
+    padding: 15/100rem 25/100rem;
+  }
+
+  .song_label {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: @pause-text;
+    height: @play_btn_height;
+    line-height: @play_btn_height;
+    font-size: @smaller-font;
+    background-color: #ebebeb;
+    padding: 0 20/100rem 0 45/100rem;
+    .playing_text {
+      color: @playing-text;
+    }
+  }
+
+  .play_btn {
+    text-align: center;
+    width: 45/100rem;
+    height: @play_btn_height;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: 30/100rem;
+    background-position: center;
+  }
+}

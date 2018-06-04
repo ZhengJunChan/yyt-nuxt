@@ -1,0 +1,74 @@
+@import './../../less/config.less';
+
+.alert_panel_component {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.7);
+  .center_box {
+    background: #fff;
+    width: 500/100rem;
+    border-radius: 20/100rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -250/100rem;
+    margin-top: -200/100rem;
+  }
+
+  header {
+    position: relative;
+    text-align: center;
+    background-size: 100% 100%;
+    padding: 35/100rem 0 20/100rem;
+    border-bottom: 1px solid #e6e6e6;
+    &>.title {
+      font-weight: normal;
+      font-size: 32/100rem;
+    }
+    .close_btn {
+      width: 70/100rem;
+      height: 70/100rem;
+      position: absolute;
+      top: 50%;
+      right: 10/100rem;
+      margin-top: -35/100rem;
+      line-height: 70/100rem;
+      &>.iconfont {
+        font-size: 20/100rem;
+      }
+    }
+  }
+
+  .body,
+  footer {
+    padding-left: 35/100rem;
+    padding-right: 35/100rem;
+  }
+
+  .body {
+    .content_box {
+      overflow: auto;
+      text-align: center;
+      margin-top: 40/100rem;
+      max-height: 490/100rem;
+    }
+  }
+
+  footer {
+    .sure_btn {
+      color: #fff;
+      height: 70/100rem;
+      text-align: center;
+      font-size: 28/100rem;
+      line-height: 70/100rem;
+      border-radius: 35/100rem;
+      background-color: #ff4c55;
+    }
+    padding-top: 40/100rem;
+    padding-bottom: 40/100rem;
+  }
+}

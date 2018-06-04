@@ -1,0 +1,35 @@
+@import './../../../less/config.less';
+
+.topic_list_component{
+	background-color: @grey-bg-color;
+	.item{
+		background-color: @content-bg-color;
+		margin-top: @margin-10;
+		&:first-child{
+			margin-top: 0;
+		}
+		&:last-child{
+			padding-bottom: 10/100rem;
+		}
+	}
+
+	&.split_line{
+		.item {
+			position: relative;
+			margin-top: 0;
+			&:last-child{
+				padding-bottom: @padding-30;
+			}
+			&:before{
+				content: '';
+				display: block;
+				height: 1px;
+				position: absolute;
+				left: @padding-20;
+				bottom: 0;
+				right: 0;
+				background-color: @split-border-color;
+			}
+		}
+	}
+}

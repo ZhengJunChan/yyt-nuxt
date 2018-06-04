@@ -1,0 +1,56 @@
+@import './../../../less/config.less';
+
+.related_topics_component {
+  padding: @padding-30 0 @padding-40;
+  .title {
+    text-align: center;
+    color: @grey-color;
+    font-weight: normal;
+    font-size: @big-font;
+    margin-bottom: @margin-40;
+    span {
+      padding: 0 0.93rem;
+      background: url(./../imgs/left.png) left center / 75/100rem 9/100rem no-repeat,
+      url(./../imgs/right.png) right center / 75/100rem 9/100rem no-repeat;
+    }
+  }
+
+  .scroller_label {
+    position: relative;
+    width: 2370/100rem;
+  }
+
+  .item {
+    width: 450/100rem;
+    height: 200/100rem;
+    margin-left: @margin-20;
+    border-radius: 5/100rem;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &:last-child {
+      margin-right: @margin-20;
+    }
+
+    .text {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      padding: 0 @padding-30;
+      width: 100%;
+      height: 100%;
+      color: @white-color;
+      line-height: 48/100rem;
+      font-size: @normal-font;
+      background-color: @before-bg-color;
+      &>span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+    }
+  }
+}

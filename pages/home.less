@@ -1,0 +1,29 @@
+@import './../../less/config.less';
+
+.home_page {
+  background-color: @grey-bg-color;
+  &>div {
+    margin-top: @margin-10;
+    padding-bottom: @padding-30;
+    background-color: @content-bg-color;
+    &:first-child,
+    &:nth-child(2) {
+      margin-top: 0;
+    }
+
+    &:first-child {
+      padding: 0;
+    }
+
+    &:nth-child(2) {
+      // .title_label {
+      //   padding-top: 0;
+      // }
+    }
+  }
+  .title_label {
+    .title{
+      padding-left: 0.85rem;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+@import './../../less/config.less';
+
+@full-height: 128/100rem;
+
+.music_label_component {
+  position: relative;
+  height: @full-height;
+
+  .cover {
+    position: absolute;
+    width: @full-height;
+    height: @full-height;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .info {
+    position: relative;
+    margin-left: 64/100rem;
+    font-size: @smaller-font;
+    height: 100%;
+    background: rgba(245, 245, 245, 1);
+    padding: 22 /100rem 20/100rem 0 84/100rem;
+  }
+
+  .title_label {
+    line-height: 43/100rem;
+  }
+
+  .type {
+    color: @pink-color;
+    padding: 0 10/100rem;
+    border-radius: 5/100rem;
+    border: solid 1px @pink-color;
+  }
+
+  .title {
+    color: @black-font;
+    font-size: @small-font;
+  }
+
+  .desc {
+    color: @light-grey-color;
+    margin-top: 10/100rem;
+    padding-bottom: 20/100rem;
+  }
+
+  .play_btn {
+    text-align: center;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 82/100rem;
+    line-height: 1.5rem;
+    img{
+      width: 42/100rem;
+      height: 42/100rem;
+    }
+  }
+
+  &.song,
+  &.music {
+    .info {
+      padding-right: 82/100rem;
+    }
+
+    .play_btn {
+      display: inline-block;
+    }
+  }
+
+  &.song {
+    .cover {
+      border-radius: 50%;
+    }
+  }
+  &.no_cover {
+    .cover {
+      display: none;
+    }
+
+    .info {
+      margin-left: 0;
+      padding-left: @padding-20;
+    }
+  }
+}
+
+// background-image: url("http://yyt.demo.com/image/7f138041d9634acc42807b75c8c01d45/110/110");

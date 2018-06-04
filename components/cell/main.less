@@ -1,0 +1,40 @@
+@import './../../less/config.less';
+
+.cell_component {
+  position: relative;
+  height: 100/100rem;
+  overflow: hidden;
+  width: 100%;
+  &>* {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+  }
+  .title {
+    font-size: @big-font;
+    color: @title-color;
+    left: 0;
+    //padding-left: 75/100rem;
+    padding-left: 0.85rem;
+    // background-size: contain;
+    background-size: 43/100rem 43/100rem;
+    background-position: @padding-20 center;
+    background-repeat: no-repeat;
+  }
+
+  .link_arrow_tags {
+    height: 100%;
+    right: 0;
+    height: 100%;
+    padding: @padding-20;
+    &>img{
+      width: 14/100rem;
+      height: 25/100rem;
+      vertical-align: middle;
+    }
+  }
+}

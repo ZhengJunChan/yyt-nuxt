@@ -1,0 +1,27 @@
+@import '~vux/src/styles/1px.less';
+@import '~vux/src/styles/weui/widget/weui_tips/weui_mask';
+@import '~vux/src/styles/weui/widget/weui_tips/weui_toast';
+@import '~vux/src/styles/weui/widget/weui-loading/weui-loading.less';
+.c_loading_component {
+    .loadingImg{
+        width: 100%;
+    }
+    .weui-toast {
+        background: none;
+    }
+    .weui-icon_toast.weui-loading {
+        margin: 30px 0 0;
+        width: 38px;
+        height: 38px;
+        vertical-align: baseline;
+        display: inline-block;
+    }
+    .vux-mask-enter,
+    .vux-mask-leave-active {
+        opacity: 0;
+    }
+    .vux-mask-leave-active,
+    .vux-mask-enter-active {
+        transition: opacity 300ms;
+    }
+}
