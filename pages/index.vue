@@ -17,7 +17,7 @@
 </template>
 
 <script>
-// import HomeApi from './home-api.js'
+import HomeApi from './home-api.js'
 // import Swiper from '~/components/swiper'
 
 export default {
@@ -58,23 +58,23 @@ export default {
   },
   methods: {
     init () {
-      // HomeApi.getHomeData().then((res) => {
-      //   if (res.code !== 200) {
-      //     // this.$toast.error(res.msg)
-      //     return
-      //   }
+      HomeApi.getHomeData().then((res) => {
+        if (res.code !== 200) {
+          // this.$toast.error(res.msg)
+          return
+        }
 
-      //   this.banner = res.data.shuffling || [] // 轮播列表
-      //   this.billboard = res.data.billboard || [] // 轮播列表
-      //   this.songSheet = res.data.song || [] // 推荐歌单
-      //   this.musicians = res.data.musician || [] // 推荐音乐人
-      //   this.musicsList = res.data.catemusic || [] // 分类音乐
-      //   this.topics = res.data.topic || [] // 热门话题
-      // }, (error) => {
-      //   console.log(error.msg || '获取数据失败')
-      //   // this.$toast.error(error.msg || '获取数据失败')
-      //   // this.$toast.error(error.msg || '获取数据失败')
-      // })
+        this.banner = res.data.shuffling || [] // 轮播列表
+        this.billboard = res.data.billboard || [] // 轮播列表
+        this.songSheet = res.data.song || [] // 推荐歌单
+        this.musicians = res.data.musician || [] // 推荐音乐人
+        this.musicsList = res.data.catemusic || [] // 分类音乐
+        this.topics = res.data.topic || [] // 热门话题
+      }, (error) => {
+        console.log(error.msg || '获取数据失败')
+        // this.$toast.error(error.msg || '获取数据失败')
+        // this.$toast.error(error.msg || '获取数据失败')
+      })
     }
   }
 }
