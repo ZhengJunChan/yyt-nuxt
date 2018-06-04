@@ -1,0 +1,27 @@
+@import './../../assets/css/config.less';
+
+.header_label_component {
+  position: relative;
+  height: 100/100rem;
+  line-height: 100/100rem;
+  color: @white-color;
+  padding: 0 @padding-30;
+  //background-color: @black-font;
+  background: -webkit-linear-gradient(left, #ff4c55 , #ff623e); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(left, #ff4c55 , #ff623ee); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(left, #ff4c55 , #ff623e); /* Firefox 3.6 - 15 */
+  background: linear-gradient(left, #ff4c55 , #ff623e); /* 标准的语法 */
+  .back{
+  	position: absolute;
+    left: 0;
+    height: 100%;
+    width: 78/100rem;
+    background: url(./../../assets/img/common/icon_back_white.png) center/0.18rem 0.34rem no-repeat;
+  }
+  h1 {
+    text-align: center;
+    font-weight: normal;
+    font-size: @bigger-font;
+    padding: 0 48/100rem;
+  }
+}
