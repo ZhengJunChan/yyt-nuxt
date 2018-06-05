@@ -1,5 +1,13 @@
 import axios from 'axios'
 
+let BASE_URL = ''
+
+if (true) {
+	BASE_URL = 'https://wap.yuanyintang.com'
+} else {
+	BASE_URL = '/'
+}
+
 // 超时时间
 axios.defaults.timeout = 5000
 

@@ -8,14 +8,14 @@
 </template>
 
 <script>
-// import axios from '~/plugins/axios'
+import store from 'vuex'
 
 export default {
   created () {
-    console.log(this.$store)
+    // console.log(this.$store)
   },
   mounted () {
-    console.log(this.$store)
+    // console.log(store)
   }
   // async asyncData () {
   //   let { data } = await axios.get('/api/users')

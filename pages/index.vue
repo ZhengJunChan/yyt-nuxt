@@ -1,5 +1,6 @@
 <template>
   <section class="home_page">
+    <!-- {{posts}} -->
     <!-- <swiper :list="banner" v-if="banner.length"></swiper> -->
     <!-- index.vue
     <img src="~assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
@@ -14,23 +15,45 @@
       </li>
     </ul> -->
     <!-- 分类音乐 -->
-    <div v-for="item in musicsList" v-if="item.music && item.music.length" :key="item.id">
+    <div v-for="item in musicList" v-if="item.music && item.music.length" :key="item.id">
+      musicList
        <!--  <cell class="title_label" :title="item.title" :icon="$fixImg(item.imgpic_info.link)">
         </cell> -->
 
-        <music-list :list="item.music" type="x-scroller" :max-num="10"></music-list>
+        <!-- <music-list :list="item.music" type="x-scroller" :max-num="10"></music-list> -->
     </div>
     <!-- /  分类音乐 -->
   </section>
 </template>
 
 <script>
+import axios from 'axios'
 import HomeApi from './home-api.js'
 
 import MusicList from '~/components/music-box/music-list'
 
 export default {
   layout: 'page',
+  asyncData() {
+    return axios.get('https://wap.yuanyintang.com/v2/api/home?app=wap')
+      .then(res => {
+        let data = res.data
+
+        return {
+          banner: data.shuffling || [],
+          billboard: data.billboard || [],
+          songSheet: data.song || [],
+          musicians: data.musician || [],
+          musicList: data.catemusic || [],
+          topics: data.topic || []
+        }
+      })
+    // return HomeApi.getHomeData().then((res) => {
+    //   return {
+    //     res: res
+    //   }
+    // })
+  },
   components: {
     // Swiper
     // Cell,
@@ -40,30 +63,10 @@ export default {
     // TopicList,
     // TopTypeList
   },
-  data () {
-    return {
-      banner: [],
-      billboard: {
-        cate_img: {},
-        song: []
-      },
-      songSheet: {
-        cate_img: {},
-        song: []
-      },
-      musicians: {
-        cate_img: {},
-        musician: []
-      },
-      musicsList: [],
-      topics: {
-        cate_img: {},
-        musician: []
-      }
-    }
-  },
   created () {
-    this.init()
+    // this.init()
+    // console.log(this.req)
+    // console.log(this.params)
   },
   methods: {
     init () {
@@ -77,7 +80,7 @@ export default {
         this.billboard = res.data.billboard || [] // 轮播列表
         this.songSheet = res.data.song || [] // 推荐歌单
         this.musicians = res.data.musician || [] // 推荐音乐人
-        this.musicsList = res.data.catemusic || [] // 分类音乐
+        this.musicList = res.data.catemusic || [] // 分类音乐
         this.topics = res.data.topic || [] // 热门话题
       }, (error) => {
         console.log(error)
