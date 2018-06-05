@@ -2,7 +2,7 @@
 
 <template>
   <div class="music_item_component">
-    <!-- <div class="cover_img" :style="{backgroundImage: `url(${icons.coverImgTop}),url(${$fixImg(info.imgpic_info.link + '/230/230')})`}" @click="goMusicDetail(info.id)">
+    <div class="cover_img" :style="{backgroundImage: `url(${icons.coverImgTop}),url(${fixImg(info.imgpic_info.link, 'w=230&h=230')})`}" @click="goMusicDetail(info.id)">
       <div></div>
       <span class="count" v-text="info.counts"></span>
       <img class="play_btn" @click.stop="play(info)" :src="playing ? icons.pause : icons.play">
@@ -14,39 +14,35 @@
       <p class="singer_name text_nowrap_ellipsis">
         <router-link :to="'/singer/'+ info.uid" v-html="info.nickname"></router-link>
       </p>
-    </div> -->
+    </div>
   </div>
 </template>
 
 <script type="text/javascript">
-// import { mapState } from 'vuex';
-import icons from './../icon.js';
-import { RouterUtil } from '@/utils'
-
-// import HeaderImg from './../../header-img';
+import { mapState } from 'vuex'
+import icons from './../icon.js'
+import { CommonUtil, RouterUtil } from '@/utils'
 
 export default {
-  components: {
-    // HeaderImg
-  },
   props: {
     info: Object
   },
   data() {
     return {
         icons
-    };
+    }
   },
   computed: {
-    // ...mapState({
-    //   playingId: state => !state.player.playing.song.pause && state.player.playing.song.id
-    // }),
-    // playing() {
-    //   return this.playingId === this.info.id
-    // }
+    ...mapState({
+      playingId: state => !state.player.playing.song.pause && state.player.playing.song.id
+    }),
+    playing() {
+      return this.playingId === this.info.id
+    }
   },
   methods: {
-    play(music) {
+    fixImg: CommonUtil.fixImg,
+    play (music) {
       // let params = {
       //   music,
       //   addPlayCount: this.addPlayCount
@@ -54,13 +50,13 @@ export default {
 
       // this.$store.dispatch('playSong', params)
     },
-    addPlayCount() {
+    addPlayCount () {
       this.info.counts++
     },
-    goMusicDetail(id) {
+    goMusicDetail (id) {
       this.go(`/music/${id}`)
     },
-    go(link) {
+    go (link) {
       RouterUtil.go(link, this.$router)
     }
   }
@@ -68,5 +64,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-// @import './main.less';
+@import './main.less';
 </style>

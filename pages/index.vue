@@ -14,81 +14,72 @@
         </nuxt-link>
       </li>
     </ul> -->
+
+    <!-- 推荐歌单 -->
+    <div>
+        <cell class="title_label" :title="songSheet.cate_img.title" :icon="fixImg(songSheet.cate_img.imgpic_info && songSheet.cate_img.imgpic_info.link)">
+        </cell>
+
+        <song-sheet-list :list="songSheet.song" type="x-scroller" :max-num="6"></song-sheet-list>
+    </div>
+    <!-- /  推荐歌单 -->
+
+    <!-- 推荐音乐人 -->
+    <div>
+        <cell class="title_label" :title="musicians.cate_img.title" :icon="fixImg(musicians.cate_img.imgpic_info && musicians.cate_img.imgpic_info.link)">
+        </cell>
+
+        <musician-list :list="musicians.musician" :max-num="6"></musician-list>
+    </div>
+    <!-- /  推荐音乐人 -->
+
     <!-- 分类音乐 -->
     <div v-for="item in musicList" v-if="item.music && item.music.length" :key="item.id">
-      musicList
-       <!--  <cell class="title_label" :title="item.title" :icon="$fixImg(item.imgpic_info.link)">
-        </cell> -->
+        <cell class="title_label" :title="item.title" :icon="fixImg(item.imgpic_info.link)">
+        </cell>
 
-        <!-- <music-list :list="item.music" type="x-scroller" :max-num="10"></music-list> -->
+        <music-list :list="item.music" type="x-scroller" :max-num="10"></music-list>
     </div>
     <!-- /  分类音乐 -->
   </section>
 </template>
 
 <script>
-import axios from 'axios'
 import HomeApi from './home-api.js'
+import { CommonUtil } from '@/utils'
 
+import Cell from '~/components/cell'
 import MusicList from '~/components/music-box/music-list'
+import MusicianList from '~/components/musician-box/musician-list'
+import SongSheetList from '~/components/song-sheet/song-sheet-list'
 
 export default {
   layout: 'page',
   asyncData() {
-    return axios.get('https://wap.yuanyintang.com/v2/api/home?app=wap')
-      .then(res => {
-        let data = res.data
+    return HomeApi.getHomeData().then(res => {
+      let data = res.data
 
-        return {
-          banner: data.shuffling || [],
-          billboard: data.billboard || [],
-          songSheet: data.song || [],
-          musicians: data.musician || [],
-          musicList: data.catemusic || [],
-          topics: data.topic || []
-        }
-      })
-    // return HomeApi.getHomeData().then((res) => {
-    //   return {
-    //     res: res
-    //   }
-    // })
+      return {
+        banner: data.shuffling || [],
+        billboard: data.billboard || [],
+        songSheet: data.song || [],
+        musicians: data.musician || [],
+        musicList: data.catemusic || [],
+        topics: data.topic || []
+      }
+    })
   },
   components: {
     // Swiper
-    // Cell,
-    // SongSheetList,
-    // MusicianList,
+    Cell,
+    SongSheetList,
+    MusicianList,
     MusicList
     // TopicList,
     // TopTypeList
   },
-  created () {
-    // this.init()
-    // console.log(this.req)
-    // console.log(this.params)
-  },
   methods: {
-    init () {
-      HomeApi.getHomeData().then((res) => {
-        if (res.code !== 200) {
-          // this.$toast.error(res.msg)
-          return
-        }
-
-        this.banner = res.data.shuffling || [] // 轮播列表
-        this.billboard = res.data.billboard || [] // 轮播列表
-        this.songSheet = res.data.song || [] // 推荐歌单
-        this.musicians = res.data.musician || [] // 推荐音乐人
-        this.musicList = res.data.catemusic || [] // 分类音乐
-        this.topics = res.data.topic || [] // 热门话题
-      }, (error) => {
-        console.log(error)
-        console.log(error.msg || '获取数据失败')
-        // this.$toast.error(error.msg || '获取数据失败')
-        // this.$toast.error(error.msg || '获取数据失败')
-      })
-    }
+    fixImg: CommonUtil.fixImg
   }
 }
 </script>

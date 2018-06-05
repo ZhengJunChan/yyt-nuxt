@@ -5,8 +5,12 @@
 
 import ApiUtil from './api-util.js'
 import RouterUtil from './router-util.js'
+import CommonUtil from './common-util.js'
+import BrowserUtil from './browser-util.js'
 
 export {
   ApiUtil,
-  RouterUtil
+  RouterUtil,
+  CommonUtil,
+  BrowserUtil
 }
