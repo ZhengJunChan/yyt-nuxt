@@ -15,6 +15,15 @@
       </li>
     </ul> -->
 
+    <!-- 排行榜 -->
+    <div>
+        <cell class="title_label" :title="billboard.cate_img.title" :icon="fixImg(billboard.cate_img.imgpic_info && billboard.cate_img.imgpic_info.link)" link="/top/navs">
+        </cell>
+
+        <top-type-list type="x-scroller" />
+    </div>
+    <!-- /  排行榜 -->
+
     <!-- 推荐歌单 -->
     <div>
         <cell class="title_label" :title="songSheet.cate_img.title" :icon="fixImg(songSheet.cate_img.imgpic_info && songSheet.cate_img.imgpic_info.link)">
@@ -46,9 +55,10 @@
 
 <script>
 import HomeApi from './home-api.js'
-import { CommonUtil } from '@/utils'
+import { CommonUtil } from '~/utils'
 
 import Cell from '~/components/cell'
+import TopTypeList from '~/components/top/type'
 import MusicList from '~/components/music-box/music-list'
 import MusicianList from '~/components/musician-box/musician-list'
 import SongSheetList from '~/components/song-sheet/song-sheet-list'
@@ -74,9 +84,9 @@ export default {
     Cell,
     SongSheetList,
     MusicianList,
-    MusicList
+    MusicList,
     // TopicList,
-    // TopTypeList
+    TopTypeList
   },
   methods: {
     fixImg: CommonUtil.fixImg

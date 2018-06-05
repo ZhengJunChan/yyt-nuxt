@@ -10,7 +10,7 @@
         <img class="ctrl_btn like_icon" :src="icons.heart.big">
 
   		<p class="sheet_counts">
-  			<!-- <span v-text="formatNumber(info.counts)"></span> -->
+  			<span v-text="info.counts_text"></span>
   		</p>
     </div>
 
@@ -24,7 +24,6 @@
 import { mapState } from 'vuex'
 import icons from './../icon.js'
 import { RouterUtil, CommonUtil } from '~/utils'
-// import { formatNumber } from '@/filters'
 import SongSheetApi from './../song-sheet-api.js'
 
 export default {
@@ -32,7 +31,7 @@ export default {
     info: Object,
     type: {
       type: String,
-      default: 'list'  // list/scroller
+      default: 'list'
     }
   },
   data() {
