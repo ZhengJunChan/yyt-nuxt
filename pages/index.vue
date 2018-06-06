@@ -15,6 +15,8 @@
       </li>
     </ul> -->
 
+    <swiper :list="banner" v-if="banner.length"></swiper>
+
     <!-- 排行榜 -->
     <div>
         <cell class="title_label" :title="billboard.cate_img.title" :icon="fixImg(billboard.cate_img.imgpic_info && billboard.cate_img.imgpic_info.link)" link="/top/navs">
@@ -58,6 +60,7 @@ import HomeApi from './home-api.js'
 import { CommonUtil } from '~/utils'
 
 import Cell from '~/components/cell'
+import Swiper from '@/components/swiper'
 import TopTypeList from '~/components/top/type'
 import MusicList from '~/components/music-box/music-list'
 import MusicianList from '~/components/musician-box/musician-list'
@@ -80,7 +83,7 @@ export default {
     })
   },
   components: {
-    // Swiper
+    Swiper,
     Cell,
     SongSheetList,
     MusicianList,

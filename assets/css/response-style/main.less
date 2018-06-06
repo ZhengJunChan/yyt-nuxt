@@ -1,0 +1,38 @@
+/**
+ * 响应式样式配置
+ * Created by 郑君婵 on 2017-06-02
+ */
+
+@import './config.less';
+
+html {
+  font-size: @font-size-root;
+}
+
+body {
+  height: @app-height;
+  background-color: #ffffff;
+}
+
+body>a {
+  font-size: 0;
+  display: none;
+}
+
+@media screen and (max-width: 321px) {
+  body {
+    font-size: @font-size-root;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 400px) {
+  body {
+    font-size: @font-size-root + 1;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  body {
+    font-size: @font-size-root + 2;
+  }
+}

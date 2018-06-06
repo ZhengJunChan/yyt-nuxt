@@ -1,20 +1,13 @@
 import axios from 'axios'
-
-let BASE_URL = ''
-
-if (true) {
-	BASE_URL = 'https://wap.yuanyintang.com'
-} else {
-	BASE_URL = '/'
-}
+import APP from '@/configs/app.js'
 
 // 超时时间
 axios.defaults.timeout = 5000
 
 // request 拦截器
 axios.interceptors.request.use(config => {
-  config.headers.logat = 4
-  config.headers.version = '2.3.0'
+  config.headers.logat = APP.LOG_AT
+  config.headers.version = APP.VERSON
 
   return config
 }, error => {

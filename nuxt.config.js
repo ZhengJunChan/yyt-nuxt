@@ -1,19 +1,24 @@
+const path = require('path')
+const APP = require('./configs/app.js')
+const vuxLoader = require('vux-loader')
+
 module.exports = {
   /*
   ** Headers of the page
   */
   head: {
-    title: '源音塘——全新的二次元音乐社区',
+    title: APP.TITLE,
     meta: [
       { charset: 'utf-8' },
       { name: 'fragment', content: '!' },
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0' },
-      { name: 'keywords', content: '源音塘|原创|二次元音乐|满汉女神|加入音乐人|Vocaloid|动漫游戏|古风|三次元|翻唱歌曲|二次元|音乐人|咕噜吧啦|幻音' },
-      { hid: 'description', name: 'description', content: '源音塘是全新的以二次元音乐为主的音乐社区。这里有让耳朵怀孕的丰富良曲、极富魅力的音乐人和偶尔破次元的音乐同好。每天,故事和音乐都在这里'}
+      { hid: 'keywords', name: 'keywords', content: APP.KEYWORDS },
+      { hid: 'description', name: 'description', content: APP.DESCRIPTION},
+      { hid: 'viewport', name: 'viewport', content: 'width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', type: 'text/css', href: '//at.alicdn.com/t/font_422065_zlgepac8yxdmquxr.css' }
     ],
     script: [
       { src: '/com.js' }
@@ -22,12 +27,21 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['~/assets/css/main.css'],
+  css: [
+    '~/assets/css/main.css',
+    'vux/src/styles/reset.less',
+    'vux/src/styles/1px.less',
+    '~/assets/css/response-style/main.less'
+  ],
   /*
   ** Customize the progress bar color
   */
+  build: {
+    vendor: ['axios', 'vux']
+  },
   loading: { color: '#3B8070' },
   plugins: [
+    { src: '~/plugins/vux-plugins', ssr: false },
     { src: '~/plugins/http-interceptor', ssr: true }
   ],
   /*
@@ -37,6 +51,11 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
+    resolve: {
+      alias: {
+        '@': '~'
+      }
+    },
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
@@ -46,6 +65,24 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+
+      // const configs = vuxLoader.merge(config, {
+      //   options: {
+      //     ssr: true
+      //   },
+      //   plugins: ['vux-ui']
+      // })
+
+      // return configs
+
+      const configs = vuxLoader.merge(config, {
+        options: {
+          ssr: true
+        },
+        plugins: ['vux-ui']
+      })
+
+      return configs
     }
   },
   modules: [
@@ -54,10 +91,11 @@ module.exports = {
   ],
   proxy: [
     ['/v2', { 
-      target: 'http://demowap.imxkj.com/'
+      target: 'https://api.yuanyintang.com'
+      // target: APP.V2_SERVER
     }],
     ['/files', { 
-      target: 'http://api.demo.com'
+      target: APP.FILES_SERVER
     }]
   ]
 }
