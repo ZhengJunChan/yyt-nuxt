@@ -1,7 +1,5 @@
 <template>
   <section class="home_page">
-    <!-- {{posts}} -->
-    <!-- <swiper :list="banner" v-if="banner.length"></swiper> -->
     <!-- index.vue
     <img src="~assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
     <h1 class="title">

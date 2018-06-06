@@ -66,15 +66,6 @@ module.exports = {
         })
       }
 
-      // const configs = vuxLoader.merge(config, {
-      //   options: {
-      //     ssr: true
-      //   },
-      //   plugins: ['vux-ui']
-      // })
-
-      // return configs
-
       const configs = vuxLoader.merge(config, {
         options: {
           ssr: true
