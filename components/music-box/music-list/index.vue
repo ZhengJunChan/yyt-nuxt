@@ -2,12 +2,12 @@
 
 <template>
 <div class="music_list_component">
-    <!-- <ul class="detail" v-if="type === 'detail'">
+    <ul class="detail" v-if="type === 'detail'">
         <li v-for="(item, index) in list" :key="item.id">
             <music-detail-item :info="item" :index="index + 1 + fromNum"
             ></music-detail-item>
         </li>
-    </ul> -->
+    </ul>
 
  <!--    <div class="list clear_float" v-if="type === 'list'">
         <music-item class="item fl" v-for="(item, index) in list" :key="item.id" v-if="!maxNum || (maxNum && index < maxNum)" :info="item"></music-item>
@@ -23,17 +23,13 @@
 
 <script type="text/javascript">
 
-// import { Scroller, Flexbox, FlexboxItem } from 'vux'
 import MusicItem from './../music-item'
-// import MusicDetailItem from './../music-detail-item'
+import MusicDetailItem from './../music-detail-item'
 
 export default {
   components: {
-    // Scroller,
-    // Flexbox,
-    // FlexboxItem,
-    MusicItem
-    // MusicDetailItem
+    MusicItem,
+    MusicDetailItem
   },
   props: {
     list: Array,

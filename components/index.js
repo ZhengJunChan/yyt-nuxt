@@ -4,17 +4,17 @@
 // import HeaderImg from './header-img' // 头像
 // import CLoading from './c-loading' // 加载
 // import SongSheetItem from './song-sheet/song-sheet-item' // 单个歌单
-// import SongSheetList from './song-sheet/song-sheet-list' // 歌单列表
+import SongSheetList from './song-sheet/song-sheet-list' // 歌单列表
 // import MusicianItem from './musician-box/musician-item' // 单个音乐人
 // import MusicianList from './musician-box/musician-list' // 音乐人列表
 // import MusicItem from './music-box/music-item' // 单个音乐
-// import MusicList from './music-box/music-list' // 音乐列表
+import MusicList from './music-box/music-list' // 音乐列表
 // import TopicItem from './topic-box/topic-item' // 单个话题
 // import TopicList from './topic-box/topic-list' // 话题列表
 // import RelatedTopics from './topic-box/related-topics' // 话题列表
-// import MusicHeader from './music-header' // 音乐（歌单）详情头部
-// import BoxTitle from './box-title' // 模块标题
-// import TagBox from './tag/tag-box' // 标签模块
+import MusicHeader from './music-header' // 音乐（歌单）详情头部
+import BoxTitle from './box-title' // 模块标题
+import TagBox from './tag/tag-box' // 标签模块
 // import SingerHeader from './singer-header' // 音乐人详情头部
 // import MenuBar from './menu-bar' // 菜单
 // import DynamicItem from './dynamic-box/dynamic-item' // 单个动态
@@ -34,23 +34,23 @@ import TopSinger from './top/list/top-singer.vue'
 
 export {
   TopList,
-  TopSinger
+  TopSinger,
   // Swiper,
   // // LinkArrow,
   // HeaderImg,
   // CLoading,
   // SongSheetItem,
-  // SongSheetList,
+  SongSheetList,
   // MusicianItem,
   // MusicianList,
   // MusicItem,
-  // MusicList,
+  MusicList,
   // TopicItem,
   // TopicList,
   // RelatedTopics,
-  // MusicHeader,
-  // BoxTitle,
-  // TagBox,
+  MusicHeader,
+  BoxTitle,
+  TagBox,
   // SingerHeader,
   // MenuBar,
   // DynamicItem,

@@ -15,50 +15,50 @@
 </template>
 
 <script type="text/javascript">
-import { mapState } from 'vuex';
+import { mapState } from 'vuex'
 
-import HeaderImg from './../../header-img';
-import icons from './../icon.js';
-import { RouterUtil } from '@/utils';
+import HeaderImg from './../../header-img'
+import icons from './../icon.js'
+import { RouterUtil } from '@/utils'
 
 export default {
-    components: {
-        HeaderImg
-    },
-    props: {
-        index: Number,
-        info: Object
-    },
-    data() {
-        return {
-            icons
-        };
-    },
-    computed: {
-        ...mapState({
-            playingId: state => state.player.playing.song.id,
-            pause: state => state.player.playing.song.pause
-        }),
-        active() {
-            return this.playingId === this.info.id;
-        }
-    },
-    methods: {
-        goMusicDetail(id) {
-            this.go(`/music/${id}`);
-        },
-        go(link) {
-            RouterUtil.go(link, this.$router);
-        },
-        playMusic(music) {
-            let params = {
-                music
-            };
-
-            this.$store.dispatch('playSong', params);
-        }
+  components: {
+    HeaderImg
+  },
+  props: {
+    index: Number,
+    info: Object
+  },
+  data() {
+    return {
+      icons
     }
-};
+  },
+  computed: {
+    ...mapState({
+      playingId: state => state.player.playing.song.id,
+      pause: state => state.player.playing.song.pause
+    }),
+    active() {
+      return this.playingId === this.info.id
+    }
+  },
+  methods: {
+    goMusicDetail(id) {
+      this.go(`/music/${id}`)
+    },
+    go(link) {
+      RouterUtil.go(link, this.$router)
+    },
+    playMusic(music) {
+      let params = {
+        music
+      }
+
+      this.$store.dispatch('playSong', params)
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
