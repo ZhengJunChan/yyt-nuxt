@@ -1,0 +1,257 @@
+@import './../../../assets/css/config.less';
+
+.doughnut_component {
+  padding: 0 @padding-30;
+}
+
+.doughnut {
+  .order {
+    background-image: none;
+  }
+  .normal_list {
+    .order {
+      background-image: none;
+    }
+  }
+}
+
+.top_three {
+  width: 33.33%;
+  padding-left: 0;
+  display: inline-block;
+  @box-padding: 35/100rem;
+
+  &:nth-child(2) {
+    float: left;
+    padding-right: @box-padding;
+    .order {
+      color: #92cbe5;
+      background-image: url(./../imgs/icon_second.png);
+    }
+    .play_btn {
+      border-color: #92cbe5;
+    }
+  }
+
+  &:nth-child(1) {
+    text-align: center;
+    .order {
+      width: 100%;
+      color: #f9d341;
+      padding-top: 24/100rem;
+      background-size: 65/100rem 52/100rem;
+      background-image: url(./../imgs/icon_first.png);
+    }
+    .img_box {
+      padding-top: 100%;
+      padding-right: 100%;
+      border-radius: 12/100rem;
+    }
+    .play_btn {
+      border-color: #f9d341;
+      border-radius: 12/100rem;
+    }
+  }
+
+  &:nth-child(3) {
+    text-align: right;
+    float: right;
+    padding-left: @box-padding;
+    .order {
+      color: #d0a181;
+      background-image: url(./../imgs/icon_third.png);
+    }
+    .play_btn {
+      border-color: #d0a181;
+    }
+  }
+
+  &:nth-child(2),
+  &:nth-child(3) {
+    .order {
+      width: 100%;
+      margin-top: 60/100rem;
+      padding-top: 18/100rem;
+      background-size: 52/100rem 46/100rem;
+    }
+    .img_box {
+      padding-top: 90%;
+      padding-right: 90%;
+    }
+  }
+
+  .infos {
+    text-align: center;
+  }
+
+  .add_btn {
+    margin-bottom: 4/100rem;
+  }
+
+  .play_btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-style: solid;
+    border-radius: 10/100rem;
+    border-width: 5/100rem;
+  }
+  .order {
+    text-align: right;
+    font-size: 30/100rem;
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+  .cover {
+    text-align: center;
+    &>p,
+    &>div {
+      display: inline-block;
+    }
+  }
+  .counts {
+    margin-bottom: 20/100rem;
+  }
+  .nickname {
+    margin-bottom: 10/100rem;
+  }
+}
+
+.normal_list {
+  position: relative;
+  padding-left: 210/100rem;
+  .cover {
+    position: absolute;
+    left: 0;
+    top: @padding-20;
+    padding-left: 60/100rem;
+
+    .order {
+      width: 46/100rem;
+      text-align: center;
+      position: absolute;
+      top: 18/100rem;
+      left: 0;
+      height: 90/100rem;
+      color: @title-color;
+      font-size: 40/100rem;
+      display: inline-block;
+    }
+
+    .img_box {
+      width: 130/100rem;
+      height: 130/100rem;
+    }
+  }
+
+  .drop,
+  .rise,
+  .level {
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 24/100rem 24/100rem;
+  }
+
+  .rise {
+    background-image: url(./../imgs/icon_top_rise.png);
+  }
+
+  .drop {
+    background-image: url(./../imgs/icon_top_drop.png);
+  }
+
+  .level {
+    background-image: url(./../imgs/icon_top_level.png);
+  }
+
+  .infos {
+    padding: @padding-20 170/100rem @padding-20 0;
+    border-bottom: 1px solid @split-border-color;
+    .counts {
+      color: @rad-color;
+    }
+  }
+  .counts {
+    font-size: @smaller-font;
+  }
+
+  .score {
+    text-align: center;
+    position: absolute;
+    top: 30/100rem;
+    right: 0;
+    line-height: 66/100rem;
+  }
+
+  .add_number {
+    position: absolute;
+    top: 50/100rem;
+    right: 0;
+    text-align: right;
+    .add_btn {
+      margin-bottom: 50/100rem;
+    }
+    .counts {
+      color: @grey-color
+    }
+  }
+
+  .number {
+    color: @rad-color;
+    font-size: 40/100rem;
+  }
+}
+
+.cover {
+  .img_box {
+    position: relative;
+    overflow: hidden;
+    width: 130/100rem;
+    height: 130/100rem; // display: inline-block;
+    border-radius: 10/100rem;
+    background-size: cover;
+    background-position: center;
+
+    .play_btn {
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: rgba(0, 0, 0, 0.2);
+      background-size: 50/100rem 50/100rem;
+      &.play {
+        background-image: url(./../imgs/icon_top_play.png);
+      }
+      &.pause {
+        background-image: url(./../imgs/icon_top_play2.png);
+      }
+    }
+  }
+}
+
+.infos {
+  line-height: 60/100rem;
+  .title {
+    color: @title-color;
+    font-weight: normal;
+    margin: 4/100rem 0;
+    font-size: @normal-font;
+  }
+}
+
+.add_btn {
+  color: #fff;
+  text-align: center;
+  font-size: 26/100rem;
+  display: inline-block;
+  width: 130/100rem;
+  height: 60/100rem;
+  line-height: 60/100rem;
+  border-radius: 30/100rem;
+  background-color: #ffb119;
+}
+
+.grey {
+  color: #9da6a4;
+  font-size: @smaller-font;
+}

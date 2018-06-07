@@ -1,6 +1,7 @@
 const path = require('path')
 const APP = require('./configs/app.js')
 const vuxLoader = require('vux-loader')
+const webpack = require('webpack')
 
 module.exports = {
   /*
@@ -14,7 +15,7 @@ module.exports = {
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
       { hid: 'keywords', name: 'keywords', content: APP.KEYWORDS },
       { hid: 'description', name: 'description', content: APP.DESCRIPTION},
-      { hid: 'viewport', name: 'viewport', content: 'width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -34,10 +35,16 @@ module.exports = {
     '~/assets/css/response-style/main.less'
   ],
   /*
+  ** Router config
+  */
+  router: {
+    middleware: 'router-interceptor'
+  },
+  /*
   ** Customize the progress bar color
   */
   build: {
-    vendor: ['axios', 'vux']
+    vendor: ['axios', 'vux', 'jquery']
   },
   loading: { color: '#3B8070' },
   plugins: [
@@ -56,6 +63,11 @@ module.exports = {
         '@': '~'
       }
     },
+    plugins: [  
+      new webpack.ProvidePlugin({  
+        '$': 'jquery'  
+      })  
+    ],
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({

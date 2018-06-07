@@ -1,7 +1,9 @@
 // import axios from 'axios'
 
-export default function ({ store, redirect }) {
-  console.log(store)
+export default function ({env}) {
+  console.log('router-i')
+  console.log(env)
+  // console.log(store)
   // // 超时时间
   // axios.defaults.timeout = 5000
 
@@ -22,4 +24,5 @@ export default function ({ store, redirect }) {
   // }, error => {
   //   return Promise.reject(error)
   // })
+  // if (isServer && !req) return
 }

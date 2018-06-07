@@ -13,8 +13,16 @@ export default {
       window.location.href = url
     }
   },
+  replace(url, $router) {
+    const useRouter = typeof url === 'object' || ($router && typeof url === 'string' && !/http/.test(url))
+
+    if (useRouter) {
+      $router.replace(url)
+    } else {
+      window.location.replace(url)
+    }
+  },
   download: function ($router, link) {
-  	console.log($router)
   	let url = 'yyt://'
     let $route = $router.currentRoute
 

@@ -7,8 +7,12 @@
 
 import TopTypeList from '@/components/top/type'
 
+const title = "排行榜"
+
 export default {
-  layout: 'page',
+  asyncData({ store }) {
+    store.commit('app/setTitle', title)
+  },
   components: {
     TopTypeList
   }

@@ -2,7 +2,7 @@
   <div class="download_page">
   	<div class="btn_panel">
       <div class="header">
-        <img class="logo" src="/static/imgs/icons/logo_red.png">
+        <img class="logo" src="./../../static/imgs/icons/logo_red.png">
         <h1>源音塘</h1>
         <p>全新升级 畅享音悦无极限</p>
       </div>

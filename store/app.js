@@ -1,12 +1,14 @@
+const APP = require('~/configs/app.js')
+
 export const state = () => ({
   // App版本
-  version: '2.3.0',
+  version: APP.VERSON,
   // 设备唯一码
   device_token: '',
   // 设置项目title
-  title: 'title',
+  title: APP.TITLE,
   // 来源，4：wap
-  logat: 4
+  logat: APP.LOG_AT
 })
 
 export const mutations = {
