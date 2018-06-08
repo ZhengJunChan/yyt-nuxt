@@ -16,7 +16,11 @@ axios.interceptors.request.use(config => {
 
 // response 拦截器
 axios.interceptors.response.use(response => {
+  // console.log('response')
+  // console.log(response)
   return response.data
 }, error => {
+  // console.log('error')
+  // console.log(error)
   return Promise.reject(error)
 })

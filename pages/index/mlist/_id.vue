@@ -27,8 +27,6 @@ import titles from './../title.js'
 import SongSheetApi from './song-sheet-api.js'
 
 import { MusicHeader, TagBox, BoxTitle, MusicList, SongSheetList } from '@/components'
-// import MusicList from '@/components/music-box/music-list'
-// import SongSheetList from '@/components/song-sheet/song-sheet-list'
 
 export default {
   asyncData({ store, params }) {

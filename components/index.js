@@ -15,8 +15,8 @@ import MusicList from './music-box/music-list' // 音乐列表
 import MusicHeader from './music-header' // 音乐（歌单）详情头部
 import BoxTitle from './box-title' // 模块标题
 import TagBox from './tag/tag-box' // 标签模块
-// import SingerHeader from './singer-header' // 音乐人详情头部
-// import MenuBar from './menu-bar' // 菜单
+import SingerHeader from './singer-header' // 音乐人详情头部
+import MenuBar from './menu-bar' // 菜单
 // import DynamicItem from './dynamic-box/dynamic-item' // 单个动态
 // import DynamicList from './dynamic-box/dynamic-list' // 动态列表
 // import MusicLabel from './music-label' // 音乐label
@@ -51,8 +51,8 @@ export {
   MusicHeader,
   BoxTitle,
   TagBox,
-  // SingerHeader,
-  // MenuBar,
+  SingerHeader,
+  MenuBar
   // DynamicItem,
   // DynamicList,
   // MusicLabel,

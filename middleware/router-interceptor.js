@@ -1,8 +1,8 @@
 // import axios from 'axios'
 
 export default function ({env}) {
-  console.log('router-i')
-  console.log(env)
+  // console.log('router-i')
+  // console.log(env)
   // console.log(store)
   // // 超时时间
   // axios.defaults.timeout = 5000

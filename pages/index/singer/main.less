@@ -1,0 +1,23 @@
+@import './../../../assets/css/config.less';
+
+.sheet_detail_page {
+  @content-padding: @padding-20;
+  .body {
+    background-color: @grey-bg-color;
+
+    &>div {
+      background-color: @white-color;
+    }
+
+    .music_list {
+      padding-top: @padding-30;
+      .list_title {
+        margin: 0 @content-padding @padding-20;
+      }
+    }
+
+    .sheet {
+      padding: @padding-30 @content-padding;
+    }
+  }
+}
