@@ -49,9 +49,9 @@
         </empty-tip>
     </div>
 
-    <!-- <div class="more" v-if="pagenation.totalCount > pagenation.perPage">
+    <div class="more" v-if="pagenation.totalCount > pagenation.perPage">
         <more-btn text="查看全部动态"></more-btn>
-    </div> -->
+    </div>
 </div>
 </template>
 
