@@ -2,9 +2,9 @@
 
 <template>
 <div class="singer_header_component">
-  <blur :blur-amount=20 :url="fixImg(info.head_info && info.head_info.link, `w=140&h=140`)" :height="230">
+  <blur :blur-amount=20 :url="info && info.head_info && fixImg(info.head_info.link, `w=140&h=140`)" :height="230">
     <div class="content">
-      <header-img :size="140" :header-img="info.head_info && info.head_info.link" :header-id="info.id" :vip="info.member_type==2"></header-img>
+      <header-img :size="140" :header-img="info && info.head_info && info.head_info.link" :header-id="info.id" :vip="info.member_type==2"></header-img>
 
       <h2>
         <span class="name">

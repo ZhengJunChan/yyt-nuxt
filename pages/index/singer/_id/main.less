@@ -1,0 +1,52 @@
+@import './../../../../assets/css/config.less';
+
+.home_page {
+  background: @grey-bg-color;
+  .body {
+    &>div {
+      margin-top: @margin-10;
+      background: @content-bg-color;
+      padding: @padding-30 @padding-20;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .intro {
+    color: @grey-color;
+    font-size: @smaller-font;
+    .desc {
+      line-height: 46/100rem;
+    }
+
+    &>ul {
+      li {
+        position: relative;
+        margin-top: 25/100rem;
+      }
+
+      .title {
+        position: absolute;
+        left: 0;
+      }
+
+      .text {
+        padding-left: 180/100rem;
+      }
+    }
+  }
+
+  .dynamics{
+  	margin-top: -40/100rem;
+    // padding-bottom: @padding-20;
+  }
+
+  .more{
+    padding-bottom: @padding-30;
+  }
+  .wei_bo_img{
+    width: 36/100rem;
+  }
+}

@@ -1,0 +1,57 @@
+@import './../../../assets/css/config.less';
+
+.swiper_page {
+  background: @grey-bg-color !important;
+  overflow: visible;
+}
+
+.item {
+  position: relative;
+  height: 240/100rem;
+  &>img {
+    width: 100%;
+    height: 100%;
+  } // 贡献周榜
+  div[class^="type"] {
+    position: absolute;
+    font-size: 40/100rem;
+  }
+  .type32 {
+    color: #0a0505;
+    font-size: 50/100rem;
+    left: 60%;
+    bottom: 20/100rem;
+    text-shadow: 2px 2px 0px #f7f1d1;
+  } // 贡献总榜
+  .type34 {
+    color: #0b0506;
+    top: 50%;
+    margin-top: 20/100rem;
+    left: 41%;
+    span+span {
+      margin-left: -8/100rem
+    }
+  } // 收益周榜
+  .type42 {
+    color: #321a3f;
+    left: 50%;
+    top: 62%;
+    width: 140/100rem;
+    height: 46/100rem;
+    text-align: center;
+    line-height: 46/100rem;
+    margin-left: -90/100rem;
+    background-color: #da136b;
+    span+span {
+      margin-left: -8/100rem
+    }
+  } // 收益总榜
+  .type44 {
+    left: 28%;
+    top: 15%;
+    color: #f0bf29;
+    span+span {
+      padding-left: 8/100rem;
+    }
+  }
+}

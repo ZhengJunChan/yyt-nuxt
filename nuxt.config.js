@@ -94,6 +94,7 @@ module.exports = {
   ],
   proxy: [
     ['/v2', { 
+      // target: 'http://demowap.imxkj.com'
       target: 'https://api.yuanyintang.com'
       // target: APP.V2_SERVER
     }],

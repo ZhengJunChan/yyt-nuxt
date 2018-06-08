@@ -5,7 +5,7 @@
         <div v-if="index < 3">
           <div class="cover">
             <div class="order" @click.stop="goSingerDetail(item.member_id)">
-              <img :src="$fixImg(item.head_info && item.head_info.link, 'w=140&h=140')">
+              <img :src="item.head_info && fixImg(item.head_info.link, 'w=140&h=140')">
             </div>
             <img class="winner_num"  @click.stop="goSingerDetail(item.member_id)" src="./../imgs/img_first2.png" v-if="index === 0">
             <img class="winner_num"  @click.stop="goSingerDetail(item.member_id)" src="./../imgs/img_second2.png" v-if="index === 1">
@@ -46,7 +46,7 @@
 
 <script type="text/javascript">
 import { Tab, TabItem } from 'vux'
-import { RouterUtil } from '@/utils'
+import { RouterUtil, CommonUtil } from '@/utils'
 
 import HeaderImg from '@/components/header-img'
 
@@ -68,6 +68,7 @@ export default {
     }
   },
   methods: {
+    fixImg: CommonUtil.fixImg,
     getLavel(code) {
       code = Number(code)
 
