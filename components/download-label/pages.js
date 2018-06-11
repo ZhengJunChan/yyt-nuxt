@@ -61,7 +61,8 @@ export default {
         url: 'top',
         billboard_type: '1', // 排行榜分类的ID，1 甜甜圈榜，2音乐榜
         date: '1', // 1 日，2 周，3月
-        class: '1' // 请求列表的id
+        class: '1', // 请求列表的id
+        toggle_id: '1' // 收益榜、贡献榜相互切换时，非当前榜单的classid
     },
     // 榜单分类页
     topTypes: {

@@ -9,11 +9,11 @@
         </li>
     </ul>
 
- <!--    <div class="list clear_float" v-if="type === 'list'">
+    <div class="list clear_float" v-if="type === 'list'">
         <music-item class="item fl" v-for="(item, index) in list" :key="item.id" v-if="!maxNum || (maxNum && index < maxNum)" :info="item"></music-item>
-    </div> -->
+    </div>
 
-	<div class="x_scroller" v-if="type === 'x-scroller'">
+	  <div class="x_scroller" v-if="type === 'x-scroller'">
         <div class="scroller_label clear_float" :style="{width: scrollerWidth}">
         	<music-item class="item fl" :info="item" v-for="(item, index) in list" :key="item.id" v-if="!maxNum || (maxNum && index < maxNum)"></music-item>
         </div>

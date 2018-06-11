@@ -1,0 +1,68 @@
+@import './../../../assets/css/config.less';
+
+.music_detail_page {
+  .body {
+    background-color: @grey-bg-color;
+
+    &>div {
+      background: @white-color;
+      padding: @padding-30 @padding-20;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .gifts {
+    .receive_gift_list{
+      margin-top: @margin-40;
+    }
+    .give_gift {
+      text-align: center;
+      margin-top: @margin-30;
+      button {
+        width: 220/100rem;
+        height: 68/100rem;
+        color: @white-color;
+        background-color: #ff4c55;
+        box-shadow: 0 5/100rem 15/100rem 0 rgba(198, 5, 14, 0.25);
+        border-radius: 34/100rem;
+      }
+    }
+  }
+
+  .intro {
+    .content {
+      color: @grey-color;
+      font-size: @smaller-font ;
+      line-height: 0.44rem;
+    }
+
+    .five_lines {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+    }
+
+    .more_text {
+      text-align: center;
+      &>p {
+        display: inline-block;
+        width: 50/100rem;
+      }
+      img {
+        height: 10/100rem;
+      }
+    }
+  }
+
+  .topic {
+    margin-top: -40/100rem;
+    padding-bottom: @padding-30;
+    .more_btn {
+      margin-top: @padding-30;
+    }
+  }
+}

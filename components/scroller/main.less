@@ -1,0 +1,78 @@
+.scroller_component {
+  position: absolute;
+  right: 0;
+  left: 0;
+  overflow: auto;
+  height: auto;
+  -webkit-overflow-scrolling: touch;
+  .inner {
+    position: absolute;
+    top: -5rem;
+    width: 100%;
+    height: auto;
+    transition-duration: 300ms;
+    .pull-refresh {
+      position: relative;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 5rem;
+      display: flex;
+      display: -webkit-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nullData,.load_more{
+      height: 1rem;
+      color: #999999;
+      line-height: 1rem;
+      text-align: center;
+    }
+    .load_more {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      display: none;
+    }
+    .down_tip,
+    .refresh-tip,
+    .up-tip {
+      display: none;
+    }
+    .up-tip:before,
+    .refresh-tip:before {
+      content: '';
+      display: inline-block;
+      width: 160px;
+      height: 70px;
+      background-size: 70% !important;
+      position: absolute;
+      top: 0;
+      left: 20%;
+    }
+    .up-tip:before {
+      background: url(./imgs/down-logo.png) no-repeat center;
+    }
+    .refresh-tip:before {
+      background: url(./imgs/refresh-logo.gif) no-repeat center;
+    }
+  }
+
+  &.touch .inner {
+    transition-duration: 0;
+  }
+
+  &.down {
+    .down_tip {
+      display: block;
+    }
+  }
+
+  &.up .up-tip {
+    display: block;
+  }
+
+  &.refresh .refresh-tip {
+    display: block;
+  }
+}

@@ -1,9 +1,9 @@
 <!-- [singer_detail_page]   @Author: 郑君婵   @DateTime: 2017-09-29 -->
 <template>
   <div class="singer_detail_page">
-    <singer-header :info="singerInfos"></singer-header>
+    <singer-header :info="singerInfos" v-if="showSingerHeader"></singer-header>
 
-    <menu-bar :menu="menus" :active-tab="activeTab"></menu-bar>
+    <menu-bar :menu="menus" :active-tab="activeTab" v-if="showSingerHeader"></menu-bar>
 
     <router-view></router-view>
   </div>
@@ -22,6 +22,7 @@ export default {
   },
   data() {
     return {
+      showSingerHeader: this.$route.name !== 'index-singer-id-sheet',
       menus: [{
         title: '主页',
         link: '/singer/' + this.$route.params.id
@@ -42,7 +43,16 @@ export default {
       }
     }
   },
-  asyncData({ store, params }) {
+  asyncData({ store, params, route }) {
+    let showSingerHeader = route.name !== 'index-singer-id-sheet'
+
+    if (!showSingerHeader) {
+      return {
+        isInit: true,
+        showSingerHeader
+      }
+    }
+
     return SingerApi.getSingerInfo({uid: params.id}).then(res => {
       store.commit('app/setTitle', res.data && res.data.nickname)
 
@@ -63,7 +73,7 @@ export default {
     }
   },
   created() {
-    !this.isInit && this.init()
+    this.showSingerHeader && !this.isInit && this.init()
   },
   methods: {
     init() {

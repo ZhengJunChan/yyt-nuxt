@@ -9,16 +9,15 @@
             </div>
             <div class="text fr">
                 <p class="total_list">
-                    <!-- <span>查看总榜></span> -->
                     <router-link :to="`/top?class_id=${infos.profit_billboard_config.class_id}&type=${infos.profit_billboard_config.type}&billboard_type=${infos.profit_billboard_config.billboard_type}`">查看总榜</router-link>
                 </p>
-                <router-link class="name" :to="`/singer/${singer.uid}`" v-text="singer.nickname" tag="p" />
+                <router-link class="name text_nowrap_ellipsis" :to="`/singer/${singer.uid}`" v-text="singer.nickname" tag="p" />
                 <p class="number">共收到{{infos.counts_text || 0}}件礼物</p>
             </div>
         </div>
 
         <ul class="list" v-if="infos.data_list.length">
-            <li class="clear_float" v-for="(item, index) in infos.data_list">
+            <li class="clear_float" v-for="(item, index) in infos.data_list" :key="index">
                 <div class="list_index" v-if="index < 3">
                     <img src="./../imgs/icon_value_first.png" v-if="index === 0">
                     <img src="./../imgs/icon_value_second.png" v-if="index === 1">
@@ -53,33 +52,33 @@
 </template>
 
 <script type="text/javascript">
-import EmptyTip from './../../empty-tip';
-import HeaderImg from './../../header-img';
+import EmptyTip from './../../empty-tip'
+import HeaderImg from './../../header-img'
 
-import { RouterUtil, CommonUtil } from '@/utils';
+import { RouterUtil, CommonUtil } from '@/utils'
 
 export default {
-    components: {
-        EmptyTip,
-        HeaderImg
-    },
-    props: {
-        infos: Object,
-        singer: Object
-    },
-    data() {
-        return {
-            isOpen: false,
-            index: 0
-        };
-    },
-    methods: {
-        fixImg: CommonUtil.fixImg,
-        download() {
-            RouterUtil.download(this.$router, this.$route);
-        }
+  components: {
+    EmptyTip,
+    HeaderImg
+  },
+  props: {
+    infos: Object,
+    singer: Object
+  },
+  data() {
+    return {
+      isOpen: false,
+      index: 0
     }
-};
+  },
+  methods: {
+    fixImg: CommonUtil.fixImg,
+    download() {
+      RouterUtil.download(this.$router, this.$route)
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>

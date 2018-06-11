@@ -10,7 +10,7 @@ import SongSheetList from './song-sheet/song-sheet-list' // 歌单列表
 // import MusicItem from './music-box/music-item' // 单个音乐
 import MusicList from './music-box/music-list' // 音乐列表
 // import TopicItem from './topic-box/topic-item' // 单个话题
-// import TopicList from './topic-box/topic-list' // 话题列表
+import TopicList from './topic-box/topic-list' // 话题列表
 // import RelatedTopics from './topic-box/related-topics' // 话题列表
 import MusicHeader from './music-header' // 音乐（歌单）详情头部
 import BoxTitle from './box-title' // 模块标题
@@ -27,16 +27,19 @@ import MoreBtn from './more-btn' // 更多按钮
 import EmptyTip from './empty-tip' // 空数据提示
 // import Cell from './cell' // 标题栏
 // import HeaderLabel from './header-label' // 返回头部
-// import Scroller from './scroller' // 返回头部
+import Scroller from './scroller' // 返回头部
 // import AlertPanel from './alert-panel' // 确定弹框
 import TopList from './top/list/top-list.vue'
 import TopSinger from './top/list/top-singer.vue'
 import TopSwiper from './top/swiper'
+import TopBox from './top/box'
+import ReceiveGiftList from './receive-gift/list'
 
 export {
   TopList,
   TopSinger,
   TopSwiper,
+  TopBox,
   // Swiper,
   // // LinkArrow,
   // HeaderImg,
@@ -48,7 +51,7 @@ export {
   // MusicItem,
   MusicList,
   // TopicItem,
-  // TopicList,
+  TopicList,
   // RelatedTopics,
   MusicHeader,
   BoxTitle,
@@ -62,9 +65,10 @@ export {
   // TagList,
   // DiscussList,
   // DownloadLabel,
-  EmptyTip
+  EmptyTip,
   // Cell,
   // HeaderLabel,
-  // Scroller,
+  Scroller,
   // AlertPanel
+  ReceiveGiftList
 }

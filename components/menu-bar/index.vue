@@ -1,7 +1,6 @@
 <!-- [menu_component]   @Author: 郑君婵   @DateTime: 2017-10-09 -->
 
 <template>
-<div>  
   <tab class="menu_bar_component" :line-width="3"
   custom-bar-width="0.2rem"
   :active-color="activeColor"
@@ -12,7 +11,6 @@
     v-text="item.title"
     @on-item-click="go(item.link)"></tab-item>
   </tab>
-</div>
 </template>
 
 <script type="text/javascript">

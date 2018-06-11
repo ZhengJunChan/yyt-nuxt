@@ -2,7 +2,7 @@
 
 <template>
   <div class="tag_list_component text_nowrap_ellipsis">
-    <div class="tag_item text_nowrap_ellipsis" v-for="(tag, index) in list" v-text="tag.title"></div>
+    <div class="tag_item text_nowrap_ellipsis" v-for="tag in list" v-text="tag.title" :key="tag.id"></div>
   </div>
 </template>
 
