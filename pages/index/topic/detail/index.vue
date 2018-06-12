@@ -115,6 +115,16 @@ export default {
       processLength: 300 // 投票后，进度条长度（单位：px）
     }
   },
+  asyncData({ store, route }) {
+    return TopicApi.getTopicDetail({id: route.query.id}).then(res => {
+      store.commit('app/setTitle', res.data.title)
+
+      return {
+        isInit: true,
+        topic: res.data
+      }
+    })
+  },
   mounted() {
     this.init()
   },
@@ -127,8 +137,13 @@ export default {
   },
   methods: {
     init() {
-      this.getTopicDetail()
       this.getDiscussList()
+
+      if (this.isInit) {
+        this.setMusicInfo()
+      } else {
+        this.getTopicDetail()
+      }
     },
     /**
      * [getCollectionSongs 获取TA的音乐头部信息]
@@ -146,9 +161,7 @@ export default {
         }
 
         this.topic = res.data
-        this.setMusicInfo(res.data)
-
-        this.$store.commit('app/setTitle', this.topic.title)
+        this.setMusicInfo()
 
         // this.$share({
         //   imgUrl: res.data.imglist_info && res.data.imglist_info[0].link,
@@ -157,7 +170,9 @@ export default {
         // })
       })
     },
-    setMusicInfo(topic) {
+    setMusicInfo() {
+      let topic = this.topic
+
       this.musicInfo.imgpic_info.link = topic.imgpic_info && topic.imgpic_info.link
       this.musicInfo.id = topic.music_id
       this.musicInfo.title = topic.music_title
