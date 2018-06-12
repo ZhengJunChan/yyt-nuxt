@@ -11,7 +11,7 @@
     }
   },
   "scripts": {
-    "dev": "nuxt",
+    "dev": "server.js",
     "build": "nuxt build",
     "start": "nuxt build && nuxt start",
     "precommit": "npm run lint",
@@ -19,8 +19,10 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "body-parser": "^1.18.3",
+    "cookie-session": "^2.0.0-beta.3",
     "cross-env": "^5.0.1",
-    "express": "^4.15.3",
+    "express": "^4.16.3",
     "jquery": "^3.3.1",
     "nuxt": "latest",
     "source-map-support": "^0.4.15",
