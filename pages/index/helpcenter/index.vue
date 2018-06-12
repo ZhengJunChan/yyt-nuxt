@@ -40,20 +40,31 @@ export default {
     }
   },
   asyncData({ store, route }) {
-    return HelpCenterApi.getDetail({id: route.query.id}).then(res => {
+     return HelpCenterApi.getDetail({id: route.query.id}).then(res => {
       store.commit('app/setTitle', {
-        title: this.article.title,
+        title: res.data.title,
         headerType: 'none'
       })
 
       return {
         isInit: true,
-        article: res.data
+        article: res.data.info
       }
     })
+    // return HelpCenterApi.getDetail({id: route.query.id}).then(res => {
+    //   store.commit('app/setTitle', {
+    //     title: res.data.title,
+    //     headerType: 'none'
+    //   })
+
+    //   return {
+    //     isInit: true,
+    //     article: res.data
+    //   }
+    // })
   },
   mounted() {
-    this.isInit && this.init()
+    !this.isInit && this.init()
   },
   methods: {
     init() {
