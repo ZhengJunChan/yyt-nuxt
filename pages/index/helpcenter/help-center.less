@@ -1,0 +1,80 @@
+@import '~vux/src/styles/1px.less';
+@import './../../../assets/css/config.less';
+
+.help_center_page {
+  color: @grey-color;
+  font-size: @small-font;
+  font-family: PingFangSC;
+  background-color: @grey-bg-color;
+  .article,.counts{
+    padding: 0 @padding-30;
+    background-color: @content-bg-color;
+  }
+
+  .article{
+    .title{
+      font-weight: normal;
+      color: @title-color;
+      font-size: @big-font;
+      padding: 30/100rem 0 24/100rem;
+    }
+    .vux-1px-b:after{
+      border-color: #e3e3e3;
+    }
+
+    .content{
+      overflow-x: hidden;
+      padding: 30/100rem 0 70/100rem;
+      img{
+        max-width: 100%;
+      }
+    }
+  }
+
+  .counts{
+    margin-top: @margin-10;
+    padding-top: @padding-40;
+    padding-bottom: @padding-60;
+    .tip{
+      color: #9da6a4;
+      font-size: @smallst-font;
+    }
+
+    .btns{
+      text-align: center;
+      margin-top: @margin-40;
+      .btn{
+        text-align: left;
+        width: 210/100rem;
+        display: inline-block;
+        padding: 8/100rem 0 8/100rem 108/100rem;
+        border-radius: 32/100rem;
+        border: solid 1px #ced9d8;
+        background-repeat: no-repeat;
+        background-size: 40/100rem 40/100rem;
+        background-position: 50/100rem center;
+        &+.btn{
+          margin-left: 120/100rem;
+        }
+        &.selected{
+          color: @rad-color;
+          border-color: @rad-color;
+        }
+      }
+    }
+
+    .zan{
+      background-image: url(./imgs/icon_help_zan.png);
+      &.selected{
+        background-image: url(./imgs/icon_help_zan2.png);
+      }
+    }
+
+    .cai{
+      background-image: url(./imgs/icon_help_cai.png);
+      &.selected{
+        background-image: url(./imgs/icon_help_cai2.png);
+      }
+    }
+  }
+}
