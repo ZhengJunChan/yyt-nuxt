@@ -8,7 +8,7 @@
 
     <div class="x_scroller">
         <div class="scroller_label clear_float" :style="{width: scrollerWidth}">
-          <div class="fl item" v-for="(item, index) in list"
+          <div class="fl item" v-for="(item, index) in list" :key="item.id"
           @click="goTopicDetail(item.id)"
           v-if="!maxNum || (maxNum && index < maxNum)"
           :style="{backgroundImage: `url(${getBgImg(item) || defaultImg})`}">
@@ -23,7 +23,7 @@
 
 <script type="text/javascript">
 // import $ from 'jquery';
-import { RouterUtil } from '@/utils'
+import { RouterUtil, CommonUtil } from '@/utils'
 import TopicApi from './../topic-api.js'
 
 export default {
@@ -55,7 +55,7 @@ export default {
         return this.defaultImg
       }
 
-      return this.$fixImg(item.imglist_info[0].link + '/450/200')
+      return CommonUtil.fixImg(item.imglist_info[0].link, 'w=450&h=200')
     },
     getDefaultImg() {
       let params = {
@@ -76,7 +76,7 @@ export default {
 
         for (; index < res.data.length; index++) {
           if (res.data[index].alias === 'topic') {
-            this.defaultImg = res.data[index].imgpic_info && this.$fixImg(res.data[index].imgpic_info.link + '/450/200')
+            this.defaultImg = res.data[index].imgpic_info && CommonUtil.fixImg(res.data[index].imgpic_info.link, 'w=450&h=200')
 
             return
           }

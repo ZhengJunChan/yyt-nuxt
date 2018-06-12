@@ -1,0 +1,207 @@
+@import './../../../../assets/css/config.less';
+
+.topic_detail_page {
+  background-color: @grey-bg-color;
+  &>div {
+    margin-top: @margin-20;
+    background-color: @content-bg-color;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .padiing_content {
+    padding: @padding-30 @padding-20;
+  }
+   .topic-detail-title{
+     padding: 0.1rem 0.2rem 0;
+     font-size: 0.34rem;
+     color: #1a1717;
+     font-weight: bold;
+     text-align: center;
+     line-height: 0.5rem;
+     margin-bottom: 0.3rem;
+   }
+  .top_label {
+    position: relative;
+    font-size: @smaller-font;
+  }
+
+  .title {
+    padding: 0 180/100rem 0 100/100rem;
+  }
+
+  .singer_header {
+    position: absolute;
+    top: 50%;
+    left: @padding-20;
+    margin-top: -30/100rem;
+  }
+
+  .name {
+    color: @grey-color;
+  }
+
+  .fallow {
+    color: @rad-color;
+    position: absolute;
+    right: @padding-40;
+    height: 50/100rem;
+    line-height: 50/100rem;
+    text-align: center;
+    padding: 0 @padding-20;
+    border: 1px solid @rad-color;
+    border-radius: 25/100rem;
+    top: 50%;
+    margin-top: -25/100rem;
+  }
+
+  .music_label {
+    margin-top: @margin-50;
+  }
+
+  .text_content {
+    color: @black-font;
+    line-height: 48/100rem;
+    margin-top: @margin-50;
+  }
+
+  .img_list {
+    img {
+      max-width: 100%;
+      margin-top: @margin-30;
+    }
+  }
+
+  .vote {}
+
+  .tag_list {
+    margin: @margin-30 0 @margin-20;
+  }
+
+  .module_title {
+    text-align: center;
+    color: @grey-color;
+    font-weight: normal;
+    font-size: @big-font;
+    background: url(./../../../../assets/img/common/img_xiushi.png) center / 252/100rem 6/100rem no-repeat;
+  }
+
+  .discuss_title {
+    height: 70/100rem;
+    font-weight: normal;
+    color: @title-color;
+    line-height: 70/100rem;
+    padding-left: 20/100rem;
+    font-size: @smaller-font;
+  }
+
+  .discuss_list {
+    margin-top: 0;
+    background-color: @grey-bg-color;
+  }
+
+  .more_btn {
+    margin-top: 0;
+    padding: @padding-10 0 @padding-30;
+    background-color: @content-bg-color;
+    &>div {
+      margin-top: 0;
+    }
+  }
+
+  .min_title{
+    color: @grey-color;
+  }
+
+  .vote_detail {
+    font-size: @small-font;
+    &>li{
+      margin-top: 30/100rem;
+    }
+
+    .checker{
+      width: 50/100rem;
+      height: 40/100rem;
+      background: url(./../../../../assets/img/common/icon_chitang_tpxuanze.png) right center/0.3rem 0.3rem no-repeat;
+      &.selected{
+        background-image: url(./../../../../assets/img/common/icon_chitang_selected.png);
+      }
+    }
+  }
+
+  .option_title {
+    color: @light-grey-color;
+    display: flex;
+  }
+
+  .option_name{
+    display: inline-block;
+    flex: 1;
+  }
+
+  .process_box {
+    display: none;
+    margin-top: @margin-10;
+  }
+
+  .vote_num,
+  .vote_per {
+    text-align: right;
+    color: @light-grey-color;
+  }
+
+  .vote_per {
+    width: 100/100rem;
+  }
+
+  .vote_num {
+    width: 160/100rem;
+  }
+
+  .process_label {
+    flex: 1;
+    display: flex;
+  }
+
+  .process_bar {
+    flex: 1;
+  }
+
+  .process_item {
+    display: inline-block;
+    background-color: @bg-color;
+    border-radius: 12.5/100rem;
+    height: 25/100rem;
+  }
+
+  .show_process {
+    .process_box {
+      display: flex;
+    }
+  }
+  .vote_discuss{
+    text-align: center;
+    &>textarea{
+      width: 100%;
+      resize: none;
+      display: block;
+      height: 104/100rem;
+      padding: @padding-20;
+      margin-top: 40/100rem;
+      font-size: @small-font;
+      border-radius: 5/100rem;
+      color: @light-grey-color;
+      background-color: @bg-color;
+    }
+
+    &>button{
+      font-size: @normal-font;
+      padding: 15/100rem 45/100rem;
+      margin-top: @margin-30;
+      background-color: @rad-color;
+      color: #fff;
+      border-radius: 28/100rem;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@import './../../../assets/css/config.less';
+
+.discuss_item_component {
+  padding: @padding-30 0;
+  font-size: @small-font;
+  background-color: @white-color;
+  .user_header {
+    float: left;
+    margin-left: @margin-20;
+    margin-right: @margin-20;
+  }
+
+  .body {
+    padding-left: 113/100rem;
+    &>p,
+    &>div {
+      padding-right: @padding-20;
+    }
+  }
+
+  .girl {
+    color: @girl-font;
+  }
+
+  .boy {
+    color: @boy-font;
+  }
+
+  .text {
+    margin-top: @margin-10;
+    line-height: 46/100rem;
+    &.shou_suo {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+    }
+  }
+
+  .all_tip{
+    color: @rad-color;
+    margin-top: @padding-20;
+  }
+
+  .music_label {
+    margin-top: @margin-20;
+  }
+
+  .discuss_detail {
+    padding: @padding-30;
+    margin-top: @margin-20;
+    line-height: 46/100rem;
+    margin-right: @margin-20;
+    background-color: @bg-color;
+  }
+
+  .first_discuss {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .more {
+    color: @rad-color;
+  }
+  .scroller_label {
+    position: relative;
+    margin-top: 10/100rem;
+  }
+
+  .img_item {
+    width: 110/100rem;
+    height: 110/100rem;
+    margin-right: 10/100rem;
+    background-size: contain;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
