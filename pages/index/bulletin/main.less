@@ -1,0 +1,27 @@
+@import './../../../assets/css/config.less';
+
+.bulletin_page {
+  padding: 0 @padding-30;
+  img {
+    max-width: 100%;
+  }
+  .title {
+    font-weight: normal;
+    color: @title-color;
+    font-size: @big-title;
+    padding: @padding-20 0 5/100rem;
+    &+hr {
+      background: rgba(157, 166, 165, 0.5);;
+      border: none;
+      height: 1px;
+    }
+  }
+  .desc_label {
+    color: @light-grey-color;
+    font-size: @smallst-font;
+    margin: @margin-10 0 @margin-30;
+    span+span {
+      padding-left: @margin-10;
+    }
+  }
+}
