@@ -1,0 +1,14 @@
+.front,
+.bg {
+  position: absolute;
+}
+
+.front {
+  z-index: 7;
+}
+
+.bg {
+  z-index: 5;
+  text-shadow: #fff 0 0 10px;
+  -webkit-text-stroke: 4px #fff;
+}

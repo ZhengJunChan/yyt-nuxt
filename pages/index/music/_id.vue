@@ -63,7 +63,7 @@
 import { mapState } from 'vuex'
 import { RouterUtil } from '@/utils'
 import titles from '@/pages/index/title.js'
-import SongSheetApi from './song-sheet-api.js'
+import MusicApi from './music-api.js'
 import GiftApi from '@/components/receive-gift/gift-api.js'
 
 import { MusicHeader, TagBox, BoxTitle, ReceiveGiftList, SongSheetList, MusicList, TopicList, MoreBtn, TopBox } from '@/components'
@@ -106,7 +106,7 @@ export default {
     }
   },
   asyncData({ store, params }) {
-    return SongSheetApi.getMusicDetail({id: params.id}).then(res => {
+    return MusicApi.getMusicDetail({id: params.id}).then(res => {
       store.commit('app/setTitle', res.data.title)
 
       return {
@@ -157,7 +157,7 @@ export default {
         id: this.musicId
       }
 
-      SongSheetApi.getMusicDetail(params).then((res) => {
+      MusicApi.getMusicDetail(params).then((res) => {
         if (res.code !== 200) {
           this.$toast.error(res.msg)
           return
