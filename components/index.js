@@ -22,10 +22,10 @@ import MusicLabel from './music-label' // 音乐label
 import MoreBtn from './more-btn' // 更多按钮
 import TagList from './tag/tag-list' // 更多按钮
 import DiscussList from './discuss-box/discuss-list' // 更多按钮
-// import DownloadLabel from './download-label' // 下载按钮
+import DownloadLabel from './download-label' // 下载按钮
 import EmptyTip from './empty-tip' // 空数据提示
 // import Cell from './cell' // 标题栏
-// import HeaderLabel from './header-label' // 返回头部
+import HeaderLabel from './header-label' // 返回头部
 import Scroller from './scroller' // 返回头部
 // import AlertPanel from './alert-panel' // 确定弹框
 import TopList from './top/list/top-list.vue'
@@ -33,12 +33,14 @@ import TopSinger from './top/list/top-singer.vue'
 import TopSwiper from './top/swiper'
 import TopBox from './top/box'
 import ReceiveGiftList from './receive-gift/list'
+import Pagination from './pagination'
 
 export {
   TopList,
   TopSinger,
   TopSwiper,
   TopBox,
+  Pagination,
   // Swiper,
   // // LinkArrow,
   HeaderImg,
@@ -63,10 +65,10 @@ export {
   MoreBtn,
   TagList,
   DiscussList,
-  // DownloadLabel,
+  DownloadLabel,
   EmptyTip,
   // Cell,
-  // HeaderLabel,
+  HeaderLabel,
   Scroller,
   // AlertPanel
   ReceiveGiftList
