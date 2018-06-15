@@ -38,16 +38,17 @@ module.exports = {
   ** Router config
   */
   router: {
-    middleware: 'router-interceptor'
+    middleware: 'share'
   },
   /*
   ** Customize the progress bar color
   */
   build: {
-    vendor: ['axios', 'vux', 'jquery', 'vuex', 'fingerprintjs2']
+    vendor: ['axios', 'vux', 'jquery', 'vuex', 'fingerprintjs2', '~/plugins/wx']
   },
   loading: { color: '#3B8070' },
   plugins: [
+    { src: '~/plugins/wx', ssr: false },
     { src: '~/plugins/android-app', ssr: false },
     { src: '~/plugins/vux-plugins', ssr: false },
     { src: '~/plugins/http-interceptor', ssr: true }

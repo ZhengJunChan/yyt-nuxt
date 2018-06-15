@@ -1,28 +1,12 @@
-// import axios from 'axios'
+// import wx from '@/plugins/wx.js'
 
-export default function ({env}) {
-  // console.log('router-i')
-  // console.log(env)
-  // console.log(store)
-  // // 超时时间
-  // axios.defaults.timeout = 5000
+export default function ({isClient}) {
+  if (!isClient) {
+    return
+  }
 
-  // // request 拦截器
-  // axios.interceptors.request.use(config => {
-  // 	console.log(store)
-  //   config.headers.logat = 4
-  //   config.headers.version = '2.3.0'
+  let wx = require('@/plugins/wx.js')
 
-  //   return config
-  // }, error => {
-  //   return Promise.reject(error)
-  // })
-
-  // // response 拦截器
-  // axios.interceptors.response.use(response => {
-  //   return response.data
-  // }, error => {
-  //   return Promise.reject(error)
-  // })
-  // if (isServer && !req) return
+  // console.log(wx)
+  console.log('wx')
 }

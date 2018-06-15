@@ -10,6 +10,13 @@
 .loading {
   /*background: url(/static/imgs/icons/loading.gif) center 180px/7.6em auto no-repeat;*/
 }
+html{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 
 html, body {
   width: 100%;

@@ -18,8 +18,27 @@
     }
   }
 
-  .container{
+  .container {
     flex: 1;
     overflow: auto;
+    overflow-y: auto;
+    /**
+     * 解决滑动时卡顿问题
+     * form: 郑君婵
+     * date: 2018-05-02
+     */
+    -webkit-overflow-scrolling: touch;
+    /* / 解决滑动时卡顿问题 */
   }
+
+  // .app_container {
+    /**
+     * 解决vue2，返回上一页白屏问题
+     * form: 郑君婵
+     * date: 2018-05-02
+     */
+    // height: 100%;
+    // overflow-y: auto;
+    /* / 解决vue2，返回上一页白屏问题 */
+  // }
 }
