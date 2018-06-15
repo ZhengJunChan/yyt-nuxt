@@ -218,7 +218,7 @@ export default {
         music: this.musicInfos,
         addPlayCount: this.addPlayCount
       }
-      this.$store.dispatch('playSong', params)
+      this.$store.dispatch('player/playSong', params)
     },
     addPlayCount() {
       this.musicInfos.counts++

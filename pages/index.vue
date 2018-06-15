@@ -1,14 +1,24 @@
 <template>
-  <nuxt-child/>
+  <nuxt />
 </template>
 
 <script>
+// import { BrowserUtil } from '@/utils'
 
 export default {
   layout: 'page',
-  head () {
-    return {
-      title: this.$store.state.app.title
+  data () {
+  	return {
+  	  isFromWX: false,
+  	  isFromApp: false
+  	}
+  },
+  mounted() {
+    this.init()
+  },
+  methods: {
+    init() {
+      // console.log('layout mount')
     }
   }
 }

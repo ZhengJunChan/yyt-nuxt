@@ -86,7 +86,7 @@ export default {
           music: this.info
         }
 
-        this.$store.dispatch('player/playSong', params)
+        this.$store.dispatch('player/player/playSong', params)
       }
     }
   }

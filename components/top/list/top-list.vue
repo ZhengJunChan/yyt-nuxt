@@ -98,7 +98,7 @@ export default {
           music
       }
 
-      this.$store.dispatch('playSong', params)
+      this.$store.dispatch('player/playSong', params)
     },
     download() {
       RouterUtil.download(this.$router, this.$route)

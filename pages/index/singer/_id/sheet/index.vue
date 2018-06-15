@@ -136,7 +136,7 @@ export default {
         addPlayCount: this.addPlayCount
       }
 
-      this.$store.dispatch('playSongSheet', params)
+      this.$store.dispatch('player/playSongSheet', params)
     },
     addPlayCount() {
       this.likeMusics.counts++

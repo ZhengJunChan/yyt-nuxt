@@ -5,9 +5,15 @@
   overflow: auto;
   flex-direction: column;
 
-  &.wei_xin {
-    padding-top: 0;
+  &.wei_xin,
+  &.from_app {
     .header_label {
+      display: none;
+    }
+  }
+
+  &.from_app {
+    .download {
       display: none;
     }
   }

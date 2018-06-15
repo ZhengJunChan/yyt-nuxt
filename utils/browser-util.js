@@ -89,7 +89,7 @@ let BrowserUtil = {
    * @DateTime 2017-06-19
    * @return   {Boolean}  [description]
    */
-  isFormApp () {
+  isFormApp: function() {
     let isFromApp = false
 
     if (BrowserUtil.isFromIosApp() || BrowserUtil.isFromAndroidApp()) {
@@ -104,7 +104,7 @@ let BrowserUtil = {
    * @DateTime 2017-06-19
    * @return   {Boolean}  [description]
    */
-  isFromIosApp () {
+  isFromIosApp: function() {
     let isFromIosApp = false
     let logAt = window.localStorage.getItem('logat') || window.localStorage.getItem('logAt')
 
@@ -120,7 +120,7 @@ let BrowserUtil = {
    * @DateTime 2017-06-19
    * @return   {Boolean}  [description]
    */
-  isFromAndroidApp () {
+  isFromAndroidApp: function() {
     let isFromAndroidApp = false
     let logAt = window.localStorage.getItem('logat') || window.localStorage.getItem('logAt')
 
@@ -136,7 +136,7 @@ let BrowserUtil = {
    * @DateTime 2017-09-21
    * @return   {Boolean}  [description]
    */
-  isFormWeiXin () {
+  isFormWeiXin: function() {
     let userAgent = window.navigator.userAgent.toLowerCase()
 
     if (String(userAgent.match(/MicroMessenger/i)) === 'micromessenger') {

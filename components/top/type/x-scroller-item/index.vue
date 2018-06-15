@@ -59,7 +59,7 @@ export default {
       let params = {
         music: this.info.music
       }
-      this.$store.dispatch('playSong', params)
+      this.$store.dispatch('player/playSong', params)
     }
   }
 }

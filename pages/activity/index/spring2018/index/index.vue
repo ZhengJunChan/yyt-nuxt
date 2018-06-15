@@ -586,7 +586,7 @@ export default {
       // } else {
       //   this.playingItem.id = music.id
 
-      //   this.$store.dispatch('playSong', { music })
+      //   this.$store.dispatch('player/playSong', { music })
       // }
     },
 //     appPlay(music) {

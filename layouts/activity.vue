@@ -9,7 +9,6 @@
 </template>
 
 <script>
-// import { BrowserUtil } from '@/utils'
 import { DownloadLabel, HeaderLabel } from '@/components'
 
 export default {

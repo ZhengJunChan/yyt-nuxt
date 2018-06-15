@@ -3,7 +3,7 @@
 <template>
   <div class="song_sheet_item_component" :class="type">
   	<div class="cover_img_box" @click="goSheetDtail()">
-  		<div class="cover_img" :style="{backgroundImage: `url(${fixImg(info.imgpic_info.link + '/230/230')})`}"></div>
+  		<div class="cover_img" :style="{backgroundImage: `url(${fixImg(info.imgpic_info.link, 'w=230&h=230')})`}"></div>
 
   		<img class="ctrl_btn play_btn" :src="playing ? icons.puase.big : icons.play.big" @click.stop="play()">
 
@@ -74,7 +74,7 @@ export default {
         addPlayCount: this.addPlayCount
       }
 
-      this.$store.dispatch('playSongSheet', params)
+      this.$store.dispatch('player/playSongSheet', params)
     },
     addPlayCount() {
       this.info.counts++

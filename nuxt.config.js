@@ -44,10 +44,11 @@ module.exports = {
   ** Customize the progress bar color
   */
   build: {
-    vendor: ['axios', 'vux', 'jquery']
+    vendor: ['axios', 'vux', 'jquery', 'vuex', 'fingerprintjs2']
   },
   loading: { color: '#3B8070' },
   plugins: [
+    { src: '~/plugins/android-app', ssr: false },
     { src: '~/plugins/vux-plugins', ssr: false },
     { src: '~/plugins/http-interceptor', ssr: true }
   ],
@@ -63,11 +64,6 @@ module.exports = {
         '@': '~'
       }
     },
-    plugins: [  
-      new webpack.ProvidePlugin({  
-        '$': 'jquery'  
-      })  
-    ],
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({

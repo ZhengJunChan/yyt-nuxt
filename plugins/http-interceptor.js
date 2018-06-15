@@ -1,6 +1,8 @@
+import Vue from 'vue'
 import axios from 'axios'
 import APP from '@/configs/app.js'
 import { CheckUtil } from '@/utils'
+
 
 // 超时时间
 axios.defaults.timeout = 5000
@@ -9,6 +11,11 @@ axios.defaults.timeout = 5000
 axios.interceptors.request.use(config => {
   config.headers.logat = APP.LOG_AT
   config.headers.version = APP.VERSON
+  // console.log(Vue.property)
+
+  if (Vue.prototype.$yyt) {
+    config.headers.logintoken = Vue.prototype.$yyt.logintoken || '';
+  }
 
   return config
 }, error => {
@@ -21,6 +28,14 @@ axios.interceptors.response.use(response => {
 
   return response.data
 }, error => {
+  if (error.response) {
+    switch (error.response.status) {
+      case 401:
+        break;
+      case 402:
+        break;
+    }
+  }
   // console.log('error')
   // console.log(error)
   return Promise.reject(error)
@@ -32,8 +47,21 @@ axios.interceptors.response.use(response => {
  * @DateTime 2017-06-01
  */
 function rebiuldResponse(response) {
-  // logingSetting(response);
+  logingSetting(response);
   rebiuldPaginationResponse(response)
+}
+
+/**
+ * [logingSetting 重构分页数据]
+ * @Author   郑君婵
+ * @DateTime 2017-06-01
+ * @param    {object}   response [response]
+ */
+function logingSetting(response) {
+  // console.log(Vue.property)
+  let uid = response.headers && response.headers['x_end_user'] || 0
+
+  Vue.prototype.$yyt = Object.assign(Vue.prototype.$yyt || {}, { uid })
 }
 
 /**

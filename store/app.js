@@ -8,7 +8,9 @@ export const state = () => ({
   // 设置项目title
   title: APP.TITLE,
   // 来源，4：wap
-  logat: APP.LOG_AT
+  logat: APP.LOG_AT,
+  isFromWX: false,
+  isFromApp: false
 })
 
 export const mutations = {
@@ -30,13 +32,14 @@ export const mutations = {
       }
     }
 
-    // if (BrowserUtil.isFromIosApp()) {
-    //   window.callAppFunction(appParams)
-    // } else if (BrowserUtil.isFromAndroidApp()) {
-    //   AndroidApp.runAdroidApi(appParams)
-    // } else if (appParams.params.title) {
-    //   document.title = appParams.params.title
-    // }
+    if (process.BROWSER_BUILD) {
+      if (BrowserUtil.isFromIosApp()) {
+        window.callAppFunction(appParams)
+      } else if (BrowserUtil.isFromAndroidApp()) {
+        AndroidApp.runAdroidApi(appParams)
+      }
+    }
+
 
     state.title = appParams.params.title
   }

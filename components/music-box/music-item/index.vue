@@ -48,7 +48,7 @@ export default {
       //   addPlayCount: this.addPlayCount
       // }
 
-      // this.$store.dispatch('playSong', params)
+      // this.$store.dispatch('player/playSong', params)
     },
     addPlayCount () {
       this.info.counts++

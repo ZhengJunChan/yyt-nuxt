@@ -1,3 +1,11 @@
+import { PlayerApi } from '@/api'
+
+let audio = null
+
+if (process.BROWSER_BUILD) {
+  audio = document.getElementById('audio')
+}
+
 export const state = () => ({
   // 正在播放的歌曲
   playing: {
@@ -25,27 +33,7 @@ export const state = () => ({
   playedSongSheets: {}
 })
 
-// let audio = document.getElementById('audio')
-let audio = null
-
 export const mutations = {
-  initPlayer (state) {
-    state.playing = {
-      // 歌曲
-      song: {
-        id: 0, // 歌曲id
-        title: '', // 歌曲名称
-        lyrics: '', // 歌词
-        pause: false, // 是否暂停
-        video_link: '', // 歌曲地址
-        song_id: 0 // 歌曲所在歌单
-      },
-      // 正在播放的列表
-      playList: []
-    }
-
-    audio.setAttribute('src', '')
-  },
   /**
    * [pause 暂停歌曲]
    * @Author   郑君婵
