@@ -71,7 +71,7 @@ let shareToWx = function(params) {
     return
   }
 
-  infos = Object.assign({}, shareInfos)
+  let infos = Object.assign({}, shareInfos)
 
   if (params) {
     Object.assign(infos, params)
