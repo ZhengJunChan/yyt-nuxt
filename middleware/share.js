@@ -7,5 +7,5 @@ export default function ({isClient}) {
 
   let wx = require('@/plugins/wx.js')
 
-  wx.shareToWx()
+  wx.default.shareToWx()
 }

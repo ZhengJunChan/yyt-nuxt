@@ -83,9 +83,9 @@ export default {
       playingId: state => !state.player.playing.song.pause && state.player.playing.song.id
     })
   },
-  created() {
-    console.log(this)
-  },
+  // created() {
+  //   console.log(this)
+  // },
   methods: {
     fixImg: CommonUtil.fixImg,
     getLavel(code) {

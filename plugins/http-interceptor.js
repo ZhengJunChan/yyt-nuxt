@@ -3,7 +3,6 @@ import axios from 'axios'
 import APP from '@/configs/app.js'
 import { CheckUtil } from '@/utils'
 
-
 // 超时时间
 axios.defaults.timeout = 5000
 
@@ -11,10 +10,9 @@ axios.defaults.timeout = 5000
 axios.interceptors.request.use(config => {
   config.headers.logat = APP.LOG_AT
   config.headers.version = APP.VERSON
-  // console.log(Vue.property)
 
   if (Vue.prototype.$yyt) {
-    config.headers.logintoken = Vue.prototype.$yyt.logintoken || '';
+    config.headers.logintoken = Vue.prototype.$yyt.logintoken || ''
   }
 
   return config
@@ -31,13 +29,11 @@ axios.interceptors.response.use(response => {
   if (error.response) {
     switch (error.response.status) {
       case 401:
-        break;
+        break
       case 402:
-        break;
+        break
     }
   }
-  // console.log('error')
-  // console.log(error)
   return Promise.reject(error)
 })
 
@@ -47,7 +43,7 @@ axios.interceptors.response.use(response => {
  * @DateTime 2017-06-01
  */
 function rebiuldResponse(response) {
-  logingSetting(response);
+  logingSetting(response)
   rebiuldPaginationResponse(response)
 }
 

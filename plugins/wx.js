@@ -20,12 +20,10 @@ let shareInfos = {
   title: document.title, // 分享标题
   link: window.location.href, // 分享链接
   imgUrl: `${window.location.origin}/static/imgs/icons/logo.png`, // 分享图标
-  desc: '500万音乐基金强势助力，让你的音乐梦照进现实，一步踏入娱乐圈！开启音乐之旅，在音乐的旅途中，源音塘与你邂逅！'
+  desc: APP.SHARE_DESC
 }
 
-registerWxSdk();
-
-function registerWxSdk() {
+let init = function() {
   if (!BrowserUtil.isFormWeiXin()) {
     // 如果不是微信环境 或者 已经注册成功
     return
@@ -62,58 +60,61 @@ function registerWxSdk() {
         return
       }
 
-      wx.shareToWx()
+      shareToWx()
     })
   })
 }
 
-let wx = {
-  shareToWx(params) {
-    if (!BrowserUtil.isFormWeiXin()) {
-      // 如果不是微信环境
-      return
-    }
+let shareToWx = function(params) {
+  if (!BrowserUtil.isFormWeiXin()) {
+    // 如果不是微信环境
+    return
+  }
 
-    infos = Object.assign({}, shareInfos)
+  infos = Object.assign({}, shareInfos)
 
-    if (params) {
-    	Object.assign(infos, params)
-    }
+  if (params) {
+    Object.assign(infos, params)
+  }
 
-    // 分享到朋友圈
-    wxSdk.onMenuShareTimeline(infos)
+  // 分享到朋友圈
+  wxSdk.onMenuShareTimeline(infos)
 
-    // 分享给朋友
-    wxSdk.onMenuShareAppMessage(infos)
+  // 分享给朋友
+  wxSdk.onMenuShareAppMessage(infos)
 
-    // 分享到QQ
-    wxSdk.onMenuShareQQ(infos)
+  // 分享到QQ
+  wxSdk.onMenuShareQQ(infos)
 
-    // 分享到腾讯微博
-    wxSdk.onMenuShareWeibo(infos)
+  // 分享到腾讯微博
+  wxSdk.onMenuShareWeibo(infos)
 
-    // 分享到QQ空间
-    wxSdk.onMenuShareQZone(infos)
-  },
-  setShareInfo(state, shareInfos) {
-    if (typeof shareInfos !== 'object') {
-      return
-    }
+  // 分享到QQ空间
+  wxSdk.onMenuShareQZone(infos)
+}
 
-    for (let key in state.shareInfos) {
-      if (shareInfos[key]) {
-        state.shareInfos[key] = shareInfos[key]
-      } else if (key === 'title') {
-        state.shareInfos[key] = document.title
-      } else if (key === 'link') {
-        state.shareInfos[key] = window.location.href
-      } else if (key === 'imgUrl') {
-        state.shareInfos[key] = `${window.location.origin}/static/imgs/icons/logo.png`
-      } else if (key === 'desc') {
-        state.shareInfos[key] = '500万音乐基金强势助力，让你的音乐梦照进现实，一步踏入娱乐圈！开启音乐之旅，在音乐的旅途中，源音塘与你邂逅！'
-      }
+let setShareInfo = function(state, shareInfos) {
+  if (typeof shareInfos !== 'object') {
+    return
+  }
+
+  for (let key in state.shareInfos) {
+    if (shareInfos[key]) {
+      state.shareInfos[key] = shareInfos[key]
+    } else if (key === 'title') {
+      state.shareInfos[key] = document.title
+    } else if (key === 'link') {
+      state.shareInfos[key] = window.location.href
+    } else if (key === 'imgUrl') {
+      state.shareInfos[key] = `${window.location.origin}/static/imgs/icons/logo.png`
+    } else if (key === 'desc') {
+      state.shareInfos[key] = '500万音乐基金强势助力，让你的音乐梦照进现实，一步踏入娱乐圈！开启音乐之旅，在音乐的旅途中，源音塘与你邂逅！'
     }
   }
 }
 
-export default wx
+export default {
+  init,
+  shareToWx,
+  setShareInfo
+}
