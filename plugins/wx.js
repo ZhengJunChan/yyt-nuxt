@@ -16,12 +16,7 @@ const ApiList = [
   'onMenuShareQZone' // 分享到QQ空间
 ]
 
-let shareInfos = {
-  title: document.title, // 分享标题
-  link: window.location.href, // 分享链接
-  imgUrl: `${window.location.origin}/static/imgs/icons/logo.png`, // 分享图标
-  desc: APP.SHARE_DESC
-}
+let shareInfos = APP.SHARE_INFOS
 
 let init = function() {
   if (!BrowserUtil.isFormWeiXin()) {

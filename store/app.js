@@ -10,7 +10,8 @@ export const state = () => ({
   // 来源，4：wap
   logat: APP.LOG_AT,
   isFromWX: false,
-  isFromApp: false
+  isFromApp: false,
+  shareInfo: null
 })
 
 export const mutations = {
@@ -21,7 +22,7 @@ export const mutations = {
   // 设置项目title
   setTitle(state, page) {
     if (!page) {
-        return
+      return
     }
 
     let appParams = {
@@ -40,7 +41,13 @@ export const mutations = {
       }
     }
 
-
     state.title = appParams.params.title
+  },
+  setShareInfo(state, shareInfos) {
+    if (!process.BROWSER_BUILD) {
+      return
+    }
+
+    state.shareInfos = Object.assign({}, APP.SHARE_INFOS, shareInfos)
   }
 }

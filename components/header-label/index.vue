@@ -7,29 +7,6 @@
   </div>
 </template>
 
-<script>
-import store from 'vuex'
-
-export default {
-  created () {
-    // console.log(this.$store)
-  },
-  mounted () {
-    // console.log(store)
-  }
-  // async asyncData () {
-  //   let { data } = await axios.get('/api/users')
-  //   return { users: data }
-  // },
-  // head () {
-  //   return {
-  //     title: 'Users'
-  //   }
-  // }
-}
-</script>
-
-
 <style lang="less" scoped>
 @import './main.less';
 </style>

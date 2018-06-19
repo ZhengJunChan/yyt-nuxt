@@ -1,11 +1,22 @@
 import { BrowserUtil } from '@/utils'
 
-export default function ({isClient}) {
-  if (!isClient || !BrowserUtil.isFormWeiXin()) {
+export default function({ isClient, store }) {
+  if (!isClient) {
     return
   }
 
-  let wx = require('@/plugins/wx.js')
+  store.commit('app/setShareInfo')
 
-  wx.default.shareToWx()
+  if (BrowserUtil.isFormWeiXin()) {
+    // 微信分享
+    let wx = require('@/plugins/wx.js').default
+
+    wx.shareToWx()
+  }
+
+  if (BrowserUtil.isFormApp()) {
+    let callAppFunction = require('@/plugins/init/callAppFunction.js').default
+
+    callAppFunction('share', store.state.app.shareInfo)
+  }
 }
