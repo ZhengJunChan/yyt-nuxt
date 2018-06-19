@@ -2,7 +2,7 @@ import { PlayerApi } from '@/api'
 
 let audio = null
 
-if (process.BROWSER_BUILD) {
+if (process.browser) {
   audio = document.getElementById('audio')
 }
 
