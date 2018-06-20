@@ -46,10 +46,6 @@ import RankListgApi from './index/rank-list-api.js'
 import TopList from '@/components/top/list/top-list.vue'
 import TopSinger from '@/components/top/list/top-singer.vue'
 
-// if (process.BROWSER_BUILD) {
-//   const $ = require('jquery')
-// }
-
 export default {
   scrollToTop: true,
   asyncData({ store, route }) {
@@ -158,7 +154,10 @@ export default {
         type: type || this.active.type
       }
 
-      // $('#topList').animate({scrollTop: '0px'}, 400)
+      if (process.browser) {
+        const $ = require('jquery')
+        $('#topList').animate({scrollTop: '0px'}, 400)
+      }
 
       RankListgApi.getList(params).then(res => {
         if (res.code !== 200) {

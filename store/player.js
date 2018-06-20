@@ -63,6 +63,7 @@ export const mutations = {
     state.playing.song.id = song.id
     state.playing.song.song_id = song.song_id
     state.playing.song.video_link = song.video_info.link
+    console.log(audio)
 
     audio.setAttribute('src', song.video_info.link)
   },

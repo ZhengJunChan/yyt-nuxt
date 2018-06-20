@@ -8,12 +8,12 @@
         </h2>
 
         <div class="content_box">
-            <img class="rule_img" src="./../../imgs/bg_jianjie_top.png">
+            <img class="rule_img" src="./../../../../assets/img/activity/spring2018/bg_jianjie_top.png">
             <div class="content">
                 <div v-html="content"></div>
                 <slot></slot>
             </div>
-            <img class="rule_img" src="./../../imgs/bg_jianjie_bottom.png">
+            <img class="rule_img" src="./../../../../assets/img/activity/spring2018/bg_jianjie_bottom.png">
         </div>
     </div>
 </template>
@@ -21,12 +21,12 @@
 <script type="text/javascript">
 
 export default {
-    props: {
-        titleImg: String,
-        titleText: String,
-        content: String
-    }
-};
+  props: {
+    titleImg: String,
+    titleText: String,
+    content: String
+  }
+}
 </script>
 
 <style lang="less" scoped>

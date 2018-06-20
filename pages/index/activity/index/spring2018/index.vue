@@ -93,7 +93,7 @@ export default {
       }
 
       return time.replace(/-/g, '.')
-    }
+    },
 //     goInputAddrPage(prize) {
 //       let type = Number(prize.type)
 //       let param = {
@@ -118,17 +118,17 @@ export default {
 //         RouterUtil.go(param.url, this.$router)
 //       }
 //     },
-//     goPage(param) {
-//       if (BrowserUtil.isFormApp()) {
-//         param.url = window.location.origin + param.url
-//         param.headerType = 'share'
-//         param.activity = 'activity'
+    goPage(param) {
+      if (BrowserUtil.isFormApp()) {
+        param.url = window.location.origin + param.url
+        param.headerType = 'share'
+        param.activity = 'activity'
 
-//         this.callAppFunction('go', param)
-//       } else {
-//         RouterUtil.go(param.url, this.$router)
-//       }
-//     },
+        this.callAppFunction('go', param)
+      } else {
+        RouterUtil.go(param.url, this.$router)
+      }
+    }
 //     acceptTianTianQuan(prize, succussCallback) {
 //       if (prize.accepting) {
 //         return

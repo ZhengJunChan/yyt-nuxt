@@ -19,9 +19,9 @@ module.exports = {
   KEYWORDS: '源音塘|原创|二次元音乐|满汉女神|加入音乐人|Vocaloid|动漫游戏|古风|三次元|翻唱歌曲|二次元|音乐人|咕噜吧啦|幻音',
   DESCRIPTION: '源音塘是全新的以二次元音乐为主的音乐社区。这里有让耳朵怀孕的丰富良曲、极富魅力的音乐人和偶尔破次元的音乐同好。每天,故事和音乐都在这里',
   SHARE_INFOS: {
-    title: process.BROWSER_BUILD && document.title, // 分享标题
-    link: process.BROWSER_BUILD && window.location.href, // 分享链接
-    imgUrl: `${process.BROWSER_BUILD && window.location.origin}/static/imgs/icons/logo.png`, // 分享图标
+    title: process.browser && document.title, // 分享标题
+    link: process.browser && window.location.href, // 分享链接
+    imgUrl: `${process.browser && window.location.origin}/static/imgs/icons/logo.png`, // 分享图标
     desc: '500万音乐基金强势助力，让你的音乐梦照进现实，一步踏入娱乐圈！开启音乐之旅，在音乐的旅途中，源音塘与你邂逅！'
   }
 }

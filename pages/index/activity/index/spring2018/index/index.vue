@@ -1,9 +1,9 @@
 <template>
   <div class="home_page" ref="pageWindow">
     <div class="header view">
-        <img class="bg_img" src="./../imgs/bg_spring_top.png">
-        <img class="renshe" src="./../imgs/img_spring_renshe.png">
-        <img class="title" src="./../imgs/img_spring_title.png">
+        <img class="bg_img" src="@/assets/img/activity/spring2018/bg_spring_top.png">
+        <img class="renshe" src="@/assets/img/activity/spring2018/img_spring_renshe.png">
+        <img class="title" src="@/assets/img/activity/spring2018/img_spring_title.png">
 
         <div class="text_desc">
             <div class="time">
@@ -43,19 +43,19 @@
         </ul>
 
         <div class="end_tip" v-if="$parent.isEnd">
-            <img src="./../imgs/bg_spring_over.png">
+            <img src="@/assets/img/activity/spring2018/bg_spring_over.png">
         </div>
     </div>
 
     <ul class="prize_area view">
         <li v-for="area in winner" :key="area.id" v-if="area.isShow">
-            <img class="head_img" v-show="area.alias === 'yuanchuang'" src="./../imgs/img_title_yuanchuang.png">
-            <img class="head_img" v-show="area.alias === 'fanchang'" src="./../imgs/img_title_fanchang.png">
+            <img class="head_img" v-show="area.alias === 'yuanchuang'" src="@/assets/img/activity/spring2018/img_title_yuanchuang.png">
+            <img class="head_img" v-show="area.alias === 'fanchang'" src="@/assets/img/activity/spring2018/img_title_fanchang.png">
 
             <div class="prize_item" v-for="prize in area.class_list" :key="prize.id" v-if="prize.data_list.length">
-                <img class="head_img" v-if="prize.alias === 'yanchangjiang'" src="./../imgs/img_spring_yanchang.png">
-                <img class="head_img" v-else-if="prize.alias === 'zuijiafengong'" src="./../imgs/img_spring_fengong.png">
-                <img class="head_img" v-else-if="prize.alias === 'renqifengong'" src="./../imgs/img_spring_renqi.png">
+                <img class="head_img" v-if="prize.alias === 'yanchangjiang'" src="@/assets/img/activity/spring2018/img_spring_yanchang.png">
+                <img class="head_img" v-else-if="prize.alias === 'zuijiafengong'" src="@/assets/img/activity/spring2018/img_spring_fengong.png">
+                <img class="head_img" v-else-if="prize.alias === 'renqifengong'" src="@/assets/img/activity/spring2018/img_spring_renqi.png">
                 
                 <music-label class="sub_item" v-for="item in prize.data_list" :key="item.id" :music="item" @play="play(item)" :playing="playingItem.id === item.id && playingItem.status === 'playing'"></music-label>
             </div>
@@ -63,7 +63,7 @@
     </ul>
 
     <div class="rule">
-        <img src="./../imgs/bg_spring_index_describe.png">
+        <img src="@/assets/img/activity/spring2018/bg_spring_index_describe.png">
 
         <div class="btn_label">
             <btn class="btn" text="查看活动规则" width="2rem" item-color="#ff99cc" @on-click="goRulePage"></btn>
@@ -72,14 +72,14 @@
     </div>
 
     <div class="view pinwei">
-        <img class="head_img" src="./../imgs/img_title_pingwei.png">
+        <img class="head_img" src="@/assets/img/activity/spring2018/img_title_pingwei.png">
     </div>
 
     <div class="choujiang view">
-        <img class="head_img" src="./../imgs/img_title_choujiang.png">
+        <img class="head_img" src="@/assets/img/activity/spring2018/img_title_choujiang.png">
 
         <div class="content">
-            <img src="./../imgs/bg_jianjie_top.png">
+            <img src="@/assets/img/activity/spring2018/bg_jianjie_top.png">
             <div class="text_desc">
                 <div class="title" v-if="isLogined">
                     <p class="front">你今天还有 <span class="red_text" v-text="prize.count"></span> 次抽奖机会</p>
@@ -94,16 +94,16 @@
                 <btn v-if="isLogined" class="btn" text="去抽奖" width="2.1rem" height="0.8rem" font-size="0.28rem" @on-click="goChouJiangPage"></btn>
                 <btn v-else class="btn" text="点我查看抽奖机会" width="3rem" height="0.8rem" font-size="0.28rem" @on-click="login"></btn>
             </div>
-            <img src="./../imgs/bg_jianjie_bottom.png">
+            <img src="@/assets/img/activity/spring2018/bg_jianjie_bottom.png">
         </div>
     </div>
 
     <div class="works_area view" id="search">
-        <img class="head_img" src="./../imgs/img_title_zuoping.png">
+        <img class="head_img" src="@/assets/img/activity/spring2018/img_title_zuoping.png">
 
         <div class="nav" :class="search.index ? 'fan_chang' : 'yuan_chuang'">
-            <img class="head_img yuan" src="./../imgs/img_title_zuoping_yuanchuang.png">
-            <img class="head_img fan" src="./../imgs/img_title_zuoping_fanchang.png">
+            <img class="head_img yuan" src="@/assets/img/activity/spring2018/img_title_zuoping_yuanchuang.png">
+            <img class="head_img fan" src="@/assets/img/activity/spring2018/img_title_zuoping_fanchang.png">
             <div @click="tiggleNav"></div>
         </div>
 
@@ -143,7 +143,7 @@
 
                 <div class="clear_float vote_info">
                     <span class="fl">{{music.vote_count}}票</span>
-                    <img class="share_icon fr" src="./../imgs/icon_spring_share.png" @click="shareMusic(music)">
+                    <img class="share_icon fr" src="@/assets/img/activity/spring2018/icon_spring_share.png" @click="shareMusic(music)">
                 </div>
             </div>
         </div>
@@ -153,13 +153,13 @@
         </div>
 
         <div class="empty" v-show="!musicList.length">
-            <img src="./../imgs/img_spring_nothing.png">
+            <img src="@/assets/img/activity/spring2018/img_spring_nothing.png">
             <p v-show="search.key">呜呜呜，没有找到和<span class="red_text">“{{search.key}}”</span>相关的作品呢</p>
         </div>
     </div>
 
     <div class="partner view" v-if="partnerList.length">
-        <img class="head_img" src="./../imgs/img_title_hezuo.png">
+        <img class="head_img" src="@/assets/img/activity/spring2018/img_title_hezuo.png">
 
         <ul>
             <li v-for="(item, index) in partnerList" @click="visitUrl(item.url)" :key="index">
@@ -173,7 +173,7 @@
 
     <!-- 非APP时的分享提示 -->
    <!--  <div class="share_tip" v-show="showShareTip" @click="showShareTip = false">
-        <img src="./../imgs/img_spring_share.png">
+        <img src="@/assets/img/activity/spring2018/img_spring_share.png">
     </div> -->
   </div>
 </template>
@@ -189,7 +189,7 @@ import { Btn, MusicLabel } from '@/components/activity/spring2018'
 import { mapState } from 'vuex'
 import icons from './../icon.js'
 import SpringApi from './../spring-api.js'
-// import { BrowserUtil, RouterUtil } from '@/utils'
+import { BrowserUtil, RouterUtil } from '@/utils'
 import { CommonUtil } from '@/utils'
 
 export default {
@@ -385,7 +385,7 @@ export default {
         params.order = this.search.order
       }
 
-      // this.paginationOptions.scroll.y = document.getElementById('search').getElementTop()
+      this.paginationOptions.scroll.y = document.getElementById('search').getElementTop()
 
       SpringApi.getEntries(params).then(res => {
         if (res.code !== 200) {
@@ -429,28 +429,28 @@ export default {
       // this.callAppFunction('gotoLogin', param)
     },
     goRulePage() {
-      // let param = {
-      //   url: '/activity/spring2018/rule/activity',
-      //   title: '活动参与规则'
-      // }
+      let param = {
+        url: '/activity/spring2018/rule/activity',
+        title: '活动参与规则'
+      }
 
-      // if (BrowserUtil.isFromAndroidApp()) {
-      //   RouterUtil.go(param.url, this.$router)
-      // } else {
-      //   this.$parent.goPage(param)
-      // }
+      if (BrowserUtil.isFromAndroidApp()) {
+        RouterUtil.go(param.url, this.$router)
+      } else {
+        this.$parent.goPage(param)
+      }
     },
     goAwardSettingPage() {
-      // let param = {
-      //   url: '/activity/spring2018/award-setting',
-      //   title: '奖项设置'
-      // }
+      let param = {
+        url: '/activity/spring2018/award-setting',
+        title: '奖项设置'
+      }
 
-      // if (BrowserUtil.isFromAndroidApp()) {
-      //   RouterUtil.go(param.url, this.$router)
-      // } else {
-      //   this.$parent.goPage(param)
-      // }
+      if (BrowserUtil.isFromAndroidApp()) {
+        RouterUtil.go(param.url, this.$router)
+      } else {
+        this.$parent.goPage(param)
+      }
     },
     goChouJiangPage() {
       // let param = {
@@ -581,13 +581,13 @@ export default {
         this.playingItem.status = this.playingItem.status === 'playing' ? 'pause' : 'playing'
       }
 
-      // if (BrowserUtil.isFormApp()) {
-      //   this.appPlay(music)
-      // } else {
-      //   this.playingItem.id = music.id
+      if (BrowserUtil.isFormApp()) {
+        // this.appPlay(music)
+      } else {
+        this.playingItem.id = music.id
 
-      //   this.$store.dispatch('player/playSong', { music })
-      // }
+        this.$store.dispatch('player/playSong', { music })
+      }
     },
 //     appPlay(music) {
 //       if (this.playingItem.id !== music.id) {

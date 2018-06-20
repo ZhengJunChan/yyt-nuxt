@@ -1,4 +1,5 @@
-const APP = require('~/configs/app.js')
+import APP from '@/configs/app.js'
+import { BrowserUtil } from '@/utils'
 
 export const state = () => ({
   // App版本
@@ -33,7 +34,7 @@ export const mutations = {
       }
     }
 
-    if (process.BROWSER_BUILD) {
+    if (process.browser) {
       if (BrowserUtil.isFromIosApp()) {
         window.callAppFunction(appParams)
       } else if (BrowserUtil.isFromAndroidApp()) {
